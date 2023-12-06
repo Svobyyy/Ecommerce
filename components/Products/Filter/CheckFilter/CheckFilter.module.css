@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+.check {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkActive {
+
+    background-color: var(--main);
+}
+
+.check svg {
+    width: 90%;
+    fill: white;
+}

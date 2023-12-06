@@ -1,0 +1,11 @@
+.header {
+  padding: var(--paddingSize);
+}
+
+.header p {
+  color: var(--secondaryText);
+}
+
+.header span {
+  border-bottom: 1px solid var(--main);
+}

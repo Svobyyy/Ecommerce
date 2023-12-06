@@ -1,0 +1,20 @@
+.main {
+  margin: 0px;
+  font-weight: 700;
+}
+
+.main button {
+  cursor: pointer;
+  border: 1px solid #a1a5a4;
+  width: 38px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: white;
+  color: varv(--main);
+}
+
+main .active {
+  background-color: var(--main);
+  color: white;
+}

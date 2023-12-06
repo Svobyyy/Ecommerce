@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-weight: 600;
+  padding: var(--paddingSize);
+  user-select: none;
+  width: 208px;
+}
+
+.filters li,
+.filters p {
+  margin-bottom: 3px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 188px);
+  padding: var(--paddingSize);
+  gap: var(--paddingSize);
+  height: 100%;
+}
+
+.main label {
+  user-select: none;
+}
+
+
+.sizesLayout {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: var(--gapSize);
+}

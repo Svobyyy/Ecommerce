@@ -1,0 +1,11 @@
+.active {
+    color: var(--green);
+}
+
+.main {
+    font-weight: 600;
+}
+
+.main li {
+    cursor: pointer;
+}

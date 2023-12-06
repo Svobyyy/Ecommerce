@@ -1,0 +1,14 @@
+.details_space {
+    display: flex;
+    flex-direction: row;
+    margin: var(--gapSize) 0px;
+  }
+
+  .details_space p:nth-of-type(1) {
+    width: 140px;
+    margin-right: 20px;
+  }
+
+  .details_space p:nth-of-type(2) {
+    width: 240px;
+  }

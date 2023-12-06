@@ -1,0 +1,12 @@
+.Brands {
+    display: flex;
+    padding: var(--paddingSize);
+    justify-content: space-between;
+    gap: var(--gapSize);
+    overflow: auto;
+}
+
+.Brands a {
+    width: 220px;
+    height: 220px;
+}

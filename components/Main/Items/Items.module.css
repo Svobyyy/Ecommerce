@@ -1,0 +1,8 @@
+.Items {
+  display: flex;
+  padding: 16px;
+  gap: var(--gapSize);
+  overflow: auto;
+  justify-content: space-between;
+}
+

@@ -1,0 +1,97 @@
+.main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.main ul {
+  max-width: 700px;
+  width: 100%;
+  padding: var(--paddingSize);
+}
+
+.main li {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--paddingSize) 0px;
+  border-bottom: 1px solid var(--secondaryText);
+  gap: var(--paddingSize);
+}
+
+
+
+.item {
+    width: 100%;
+}
+
+.item_info {
+    color: var(--secondaryText);
+    margin-bottom: var(--paddingSize);
+
+}
+
+.item_info span {
+    word-spacing: 5px;
+}
+
+.item svg {
+    width: 24px;
+}
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gapSize);
+    color: var(--main);
+    font-weight: 500;
+}
+
+.main svg:hover {
+  fill: var(--secondaryText);
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.summary {
+  padding: var(--paddingSize);
+  max-width: 335px;
+  width: 100%;
+}
+
+.summary h5 {
+  margin-bottom: var(--paddingSize);
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--gapSize);
+  font-weight: 500;
+}
+
+.total {
+  border-top: 1px solid var(--secondaryText);
+  border-bottom: 1px solid var(--secondaryText);
+  padding: var(--paddingSize) 0px;
+  margin: var(--paddingSize) 0px;
+}
+
+.summary button {
+  background-color: var(--main);
+  color: white;
+  border: none;
+  min-height: 62px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+  width: 100%;
+  margin: var(--paddingSize) 0px;
+  letter-spacing: 0.5px;
+}
+
+.summary button:hover {
+    background: #242424d0;
+  }

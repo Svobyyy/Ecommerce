@@ -1,0 +1,12 @@
+.title {
+    padding: var(--paddingSize);
+    border-top: 1px solid var(--secondary);
+}
+
+.related {
+    padding: var(--paddingSize);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--paddingSize);
+}

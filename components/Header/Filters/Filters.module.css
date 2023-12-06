@@ -1,0 +1,20 @@
+.background {
+    background-color: var(--first);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.filters {
+    overflow: auto;
+    display: inline-flex;
+    gap: 32px;
+    padding: var(--paddingSize);
+
+}
+
+.filters a {
+    font-size: 18px;
+    font-weight: 700;
+}
