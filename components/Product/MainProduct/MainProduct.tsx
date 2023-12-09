@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Image from "next/image";
 
-const MainProduct = ({ data, toStorage }: any) => {
+const MainProduct = ({ data }: any) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
 
-  console.log(localStorage.getItem("cartData"));
+  console.log(localStorage.getItem("cartData"))
 
   const addToCart = (e: any) => {
     e.preventDefault();
@@ -23,34 +23,35 @@ const MainProduct = ({ data, toStorage }: any) => {
         return;
       }
       return (
-        dispatch(
-          addCart({
-            id: data.id + size,
-            name: data.name,
-            price: data.price,
-            type: data.type,
-            size: size,
-            quantity: 1,
-            img: data.img,
-          })
-        ),
-        localStorage.setItem("dataCart", toStorage)
-      );
-    }
 
-    return (
-      dispatch(
+        dispatch(
         addCart({
-          id: data.id,
+          id: data.id + size,
           name: data.name,
           price: data.price,
           type: data.type,
+          size: size,
           quantity: 1,
           img: data.img,
         })
       ),
-      localStorage.setItem("dataCart", toStorage)
-    );
+      localStorage.setItem("dataCart", "test")
+   
+      )
+
+    }
+
+    return (dispatch(
+      addCart({
+        id: data.id,
+        name: data.name,
+        price: data.price,
+        type: data.type,
+        quantity: 1,
+        img: data.img,
+      })
+    ),
+    localStorage.setItem("dataCart", "test"))
   };
 
   return (
