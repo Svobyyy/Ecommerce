@@ -16,6 +16,23 @@ type initial = {
   totalAmount: number;
 };
 
+let cartDataIntial = []
+let quantityIntial = 0
+let totalAmountIntial = 0;
+
+if(typeof window !== "undefined")
+{
+ cartDataIntial =  JSON.parse(localStorage.getItem('cartData') || '[]')
+ quantityIntial =   JSON.parse(localStorage.getItem('cartData') || '[]')
+ totalAmountIntial = JSON.parse(localStorage.getItem('cartData') || '[]')
+}
+
+console.log(cartDataIntial)
+console.log(quantityIntial)
+console.log(totalAmountIntial)
+
+
+
 const initialState: initial = {
   cartData: [],
   quantity: 0,

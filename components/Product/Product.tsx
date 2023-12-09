@@ -20,7 +20,7 @@ const Product = () => {
           return (
             <div key={data.id + "product"}>
               <LinkProduct data={data}></LinkProduct>
-              <MainProduct data={data}></MainProduct>
+              <MainProduct data={data} toStorage={productsData}></MainProduct>
               <RelatedProduct data={productsData} related={data.type} productId={data.id}></RelatedProduct>
               <DetailsProduct data={data}></DetailsProduct>
 
