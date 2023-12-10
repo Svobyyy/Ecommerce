@@ -1,15 +1,13 @@
 import FavoriteIcon from "@/components/Icons/FavoriteIcon";
 import styles from "./MainProduct.module.css";
 import { addCart } from "@/Slices/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import Image from "next/image";
 
 const MainProduct = ({ data }: any) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
-
-  console.log(localStorage.getItem("cartData"))
 
   const addToCart = (e: any) => {
     e.preventDefault();
@@ -22,9 +20,7 @@ const MainProduct = ({ data }: any) => {
         setSelect(true);
         return;
       }
-      return (
-
-        dispatch(
+      return dispatch(
         addCart({
           id: data.id + size,
           name: data.name,
@@ -34,14 +30,10 @@ const MainProduct = ({ data }: any) => {
           quantity: 1,
           img: data.img,
         })
-      ),
-      localStorage.setItem("dataCart", "test")
-   
-      )
-
+      );
     }
 
-    return (dispatch(
+    return dispatch(
       addCart({
         id: data.id,
         name: data.name,
@@ -50,8 +42,7 @@ const MainProduct = ({ data }: any) => {
         quantity: 1,
         img: data.img,
       })
-    ),
-    localStorage.setItem("dataCart", "test"))
+    );
   };
 
   return (
