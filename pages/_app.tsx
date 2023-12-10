@@ -6,10 +6,14 @@ import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import store from "@/store";
 import Head from "next/head";
+import LocalStorage from "@/components/LocalStorage/LocalStorage";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
+
+
+
   return (
     <>
       <Head>
@@ -31,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/x-icon" href="/images/favicon.webp"></link>
       </Head>
       <Provider store={store}>
+        <LocalStorage></LocalStorage>
         <main className={inter.className}>
           <Header></Header>
           <Filters></Filters>

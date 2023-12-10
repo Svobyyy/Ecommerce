@@ -1,7 +1,7 @@
 import FavoriteIcon from "@/components/Icons/FavoriteIcon";
 import styles from "./MainProduct.module.css";
 import { addCart } from "@/Slices/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useState } from "react";
 import Image from "next/image";
 

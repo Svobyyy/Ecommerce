@@ -9,6 +9,8 @@ import PriceTagIcon from "../Icons/PriceTagIcon";
 import Image from "next/image";
 
 const Cart = () => {
+
+
   const dispatch = useDispatch();
 
   const { cartData, quantity, totalAmount } = useSelector(
