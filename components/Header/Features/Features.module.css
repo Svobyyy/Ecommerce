@@ -1,11 +1,4 @@
 
-.features {
-    display: flex;
-    gap: var(--gapSize);
-    justify-content: center;
-    align-items: center;
-}
-
 .features a {
     padding: 6px;
     border-radius: 100%;

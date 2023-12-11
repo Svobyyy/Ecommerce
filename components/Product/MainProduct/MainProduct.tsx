@@ -1,4 +1,4 @@
-import FavoriteIcon from "@/components/Icons/FavoriteIcon";
+
 import styles from "./MainProduct.module.css";
 import { addCart } from "@/Slices/cartSlice";
 import { useDispatch} from "react-redux";
@@ -95,9 +95,6 @@ const MainProduct = ({ data }: any) => {
 
           <div className={styles.features}>
             <button>Add to Bag</button>
-            <button>
-              Favorite <FavoriteIcon />
-            </button>
           </div>
         </form>
       </div>
