@@ -60,8 +60,15 @@ const cartSlice = createSlice({
       item &&
       (item.quantity--, state.quantity--, state.totalAmount -= item?.price);
     },
+
+    setInitial(state,action) {
+      state.cartData = action.payload.cartData
+      state.quantity = action.payload.quantity
+      state.totalAmount = action.payload.totalAmount
+    }
+    
   },
 });
 
 export default cartSlice;
-export const { addCart, removeCart, increase, decrease } = cartSlice.actions;
+export const { addCart, removeCart, increase, decrease, setInitial } = cartSlice.actions;
