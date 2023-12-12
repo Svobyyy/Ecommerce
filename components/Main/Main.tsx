@@ -9,9 +9,19 @@ const Main = () => {
       <Image
         src="/images/background/background.webp"
         alt="background photo of sneakers"
-        className={styles.background}
+        className={`${styles.background} ${styles.big}`}
         width={1264}
         height={384}
+        quality={100}
+        priority={true}
+      ></Image>
+
+  <Image
+        src="/images/background/backgroundSmall.webp"
+        alt="background photo of sneakers"
+        className={`${styles.background} ${styles.small}`}
+        width={767}
+        height={572}
         quality={100}
         priority={true}
       ></Image>

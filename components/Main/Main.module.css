@@ -13,7 +13,21 @@
 .background {
     width: 100%;
     height: 100%;
-    padding: 16px;
+    padding: var(--paddingSize);
     object-fit: contain;
 }
 
+.small {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .small {
+        display: inline;
+    }
+
+    .big {
+        display: none;
+    }
+  }
+  

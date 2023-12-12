@@ -28,10 +28,12 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  text-overflow: ellipsis;
+  
 }
 
 .Item_title {
+  width: 170px;
+  text-overflow: ellipsis;
   height: 18px;
   line-height: 1;
 }
