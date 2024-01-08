@@ -10,6 +10,11 @@
 }
 
 .main li {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
   display: flex;
   align-items: flex-start;
   padding: var(--paddingSize) 0px;
@@ -17,41 +22,45 @@
   gap: var(--paddingSize);
 }
 
-
-
 .item {
-    width: 100%;
+  width: 100%;
 }
 
 .item_info {
-    color: var(--secondaryText);
-    margin-bottom: var(--paddingSize);
-
+  color: var(--secondaryText);
+  margin-bottom: var(--paddingSize);
 }
 
 .item_info span {
-    word-spacing: 5px;
+  word-spacing: 5px;
 }
 
-.item svg {
-    width: 24px;
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
 }
 
-
-.title {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--gapSize);
-    color: var(--main);
-    font-weight: 500;
+.buttons svg {
+  width: 24px;
+  cursor: pointer;
 }
 
-.main svg:hover {
+.buttons div:hover {
   fill: var(--secondaryText);
 }
 
-.delete {
-  cursor: pointer;
+.title {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gapSize);
+  color: var(--main);
+  font-weight: 500;
+}
+
+.title p {
+  max-width: 300px;
 }
 
 .summary {
@@ -62,6 +71,13 @@
 
 .summary h5 {
   margin-bottom: var(--paddingSize);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.summary h5 svg {
+  transform: rotateZ(-90deg) translateX(-5px);
 }
 
 .summary div {
@@ -93,5 +109,5 @@
 }
 
 .summary button:hover {
-    background: #242424d0;
-  }
+  background: #242424d0;
+}

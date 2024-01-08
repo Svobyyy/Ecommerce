@@ -8,8 +8,8 @@ const Header = () => {
     <nav className={styles.line}>
       <header className={styles.header}>
         <Link href="/">Idochi</Link>
-        <Search></Search>
-        <Features></Features>
+        <Search/>
+        <Features/>
       </header>
     </nav>
   );

@@ -1,25 +1,22 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setInitial } from "@/Slices/cartSlice";
+import { RootState } from "@/store";
 
 const LocalStorage = () => {
   const dispatch = useDispatch();
 
   const { cartData, quantity, totalAmount } = useSelector(
-    (state: any) => state.cart
+    (state: RootState) => state.cart
   );
 
   const [local, setLocal] = useState(false);
 
-
   useEffect(() => {
-    local && (
-    localStorage.setItem("cartData", JSON.stringify(cartData)),
-    localStorage.setItem("quantity", quantity),
-    localStorage.setItem("totalAmount", totalAmount)
-    )
-   
-
+    local &&
+      (localStorage.setItem("cartData", JSON.stringify(cartData)),
+      localStorage.setItem("quantity", JSON.stringify(quantity)),
+      localStorage.setItem("totalAmount", JSON.stringify(totalAmount)));
   }, [cartData]);
 
   useEffect(() => {
@@ -35,10 +32,8 @@ const LocalStorage = () => {
       })
     );
 
-    setLocal(true)
+    setLocal(true);
   }, []);
-
-
 
   return <></>;
 };

@@ -19,9 +19,9 @@ const Products = () => {
   const size = (router.query.size as string)?.split(",");
   const special = router.query.special as string;
 
+
   const addMore = (name: string, value: string) => {
     const filterArray = (router.query[`${name}`] as string)?.split(",");
-    console.log(filterArray);
     if (filterArray === undefined)
       return router.push({
         query: { ...router.query, [`${name}`]: value },

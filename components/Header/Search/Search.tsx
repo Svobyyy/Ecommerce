@@ -4,7 +4,7 @@ import styles from "./Search.module.css";
 const Search = () => {
   return (
     <label htmlFor="search" className={styles.search}>
-      <SearchIcon></SearchIcon>
+      <SearchIcon/>
       <input placeholder="Search for product" id="search"></input>
     </label>
   );

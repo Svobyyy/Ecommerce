@@ -10,7 +10,7 @@ const Items = ({ randomId, filterBy }: any) => {
         {productsData
           .filter((data: any) => true === data[`${filterBy}`])
           .map((data: any) => {
-            return <Item data={data} key={data.id + randomId}></Item>;
+            return <Item data={data} key={data.id + randomId}/>;
           })}
       </ul>
     </>

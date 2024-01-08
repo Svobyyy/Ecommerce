@@ -1,4 +1,5 @@
 
+import { RootState } from "@/store";
 import CartIcon from "../../Icons/CartIcon";
 
 import styles from "./Features.module.css";
@@ -6,7 +7,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 const Features = () => {
-  const cartQuantity = useSelector((state: any) => state.cart.quantity);
+  const cartQuantity = useSelector((state: RootState) => state.cart.quantity);
 
   return (
     <div className={styles.features}>

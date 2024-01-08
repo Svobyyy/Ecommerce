@@ -7,14 +7,13 @@ import PlusIcon from "../Icons/PlusIcon";
 import MinusIcon from "../Icons/MinusIcon";
 import PriceTagIcon from "../Icons/PriceTagIcon";
 import Image from "next/image";
+import { RootState } from "@/store";
 
 const Cart = () => {
-
-
   const dispatch = useDispatch();
 
   const { cartData, quantity, totalAmount } = useSelector(
-    (state: any) => state.cart
+    (state: RootState) => state.cart
   );
 
   const removeHandler = (removeId: string, price: number, quantity: number) => {
@@ -52,7 +51,7 @@ const Cart = () => {
                     </p>
                   )}
                 </section>
-                <section>
+                <section className={styles.buttons}>
                   <div
                     onClick={() => {
                       dispatch(increase(data.id));

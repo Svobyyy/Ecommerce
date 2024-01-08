@@ -14,9 +14,9 @@ const Main = () => {
         height={384}
         quality={100}
         priority={true}
-      ></Image>
+      />
 
-  <Image
+      <Image
         src="/images/background/backgroundSmall.webp"
         alt="background photo of sneakers"
         className={`${styles.background} ${styles.small}`}
@@ -24,20 +24,20 @@ const Main = () => {
         height={572}
         quality={100}
         priority={true}
-      ></Image>
+      />
 
       <h5>Recommended For You</h5>
 
-      <Items randomId="trending" filterBy={"isRecommended"}></Items>
+      <Items randomId="trending" filterBy={"isRecommended"}/>
 
       <h5>Trending</h5>
-      <Items randomId="recommended" filterBy={"isTrending"}></Items>
+      <Items randomId="recommended" filterBy={"isTrending"}/>
 
-      <Brands></Brands>
+      <Brands/>
 
       <h5>Featured Apparel</h5>
 
-      <Items randomId="featured" filterBy={"isFeatured"}></Items>
+      <Items randomId="featured" filterBy={"isFeatured"}/>
     </main>
   );
 };
