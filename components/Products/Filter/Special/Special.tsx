@@ -8,7 +8,6 @@ activeSpecial: string
 
 
 const Special = ({ addRemove, name, activeSpecial }: props) => {
-  console.log(activeSpecial, name)
   return (
     <li
       onClick={() => {

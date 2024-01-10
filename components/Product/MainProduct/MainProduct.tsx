@@ -13,7 +13,11 @@ const MainProduct = ({ data }: { data: Product }) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const { size } = Object.fromEntries(formData);
+
+    const entries = Object.fromEntries(formData);
+
+    const size = entries.size as string 
+
 
     if (data.sizes !== undefined) {
       if (size === undefined) {
@@ -26,7 +30,7 @@ const MainProduct = ({ data }: { data: Product }) => {
           name: data.name,
           price: data.price,
           type: data.type,
-          size: size as string,
+          size: size,
           quantity: 1,
           img: data.img,
         })

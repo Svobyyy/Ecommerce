@@ -28,7 +28,6 @@ const LocalStorage = () => {
       localStorage.getItem("totalAmount") || "0"
     );
 
-    console.log(cartData);
 
     dispatch(
       setInitial({
