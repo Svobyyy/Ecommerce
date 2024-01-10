@@ -9,7 +9,7 @@ const MainProduct = ({ data }: { data: Product }) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
 
-  const addToCart = (e: React.FormEvent<HTMLFormElement>) => {
+  const addToCart = (e: any) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -26,7 +26,7 @@ const MainProduct = ({ data }: { data: Product }) => {
           name: data.name,
           price: data.price,
           type: data.type,
-          size: size,
+          size: size as string,
           quantity: 1,
           img: data.img,
         })
