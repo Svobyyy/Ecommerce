@@ -8,6 +8,7 @@ import Special from "./Filter/Special/Special";
 import Sizes from "./Filter/Sizes/Sizes";
 import CheckFilter from "./Filter/CheckFilter/CheckFilter";
 import { RootState } from "@/store";
+import ProductsItem from "./ProductsItem/ProductsItem";
 
 const Products = () => {
   const router = useRouter();
@@ -193,18 +194,6 @@ const Products = () => {
               value="500-600"
               filter="price"
             />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="600-700"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="700-800"
-              filter="price"
-            />
           </ul>
         </div>
 
@@ -212,8 +201,6 @@ const Products = () => {
           <div>
             <p>SIZES</p>
             <ul className={styles.sizesLayout}>
-              <Sizes addMore={addMore} sizes={size} size={"35"} />
-              <Sizes addMore={addMore} sizes={size} size={"35.5"} />
               <Sizes addMore={addMore} sizes={size} size={"36"} />
               <Sizes addMore={addMore} sizes={size} size={"36.5"} />
               <Sizes addMore={addMore} sizes={size} size={"37"} />
@@ -229,17 +216,6 @@ const Products = () => {
               <Sizes addMore={addMore} sizes={size} size={"42"} />
               <Sizes addMore={addMore} sizes={size} size={"42.5"} />
               <Sizes addMore={addMore} sizes={size} size={"43"} />
-              <Sizes addMore={addMore} sizes={size} size={"43.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"44"} />
-              <Sizes addMore={addMore} sizes={size} size={"44.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"45"} />
-              <Sizes addMore={addMore} sizes={size} size={"45.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"46"} />
-              <Sizes addMore={addMore} sizes={size} size={"46.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"47"} />
-              <Sizes addMore={addMore} sizes={size} size={"47.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"48"} />
-              <Sizes addMore={addMore} sizes={size} size={"48.5"} />
             </ul>
           </div>
         )}
@@ -300,7 +276,7 @@ const Products = () => {
 
       <ul className={styles.products} key="products">
         {filter()?.map((data: Product) => {
-          return <Item data={data} key={data.id + "products"} />;
+          return <ProductsItem data={data} key={data.id + "products"} />;
         })}
       </ul>
     </main>

@@ -36,3 +36,60 @@
   display: grid;
   gap: var(--gapSize);
 }
+
+
+
+@media (max-width: 1100px) {
+  .products {
+    grid-template-columns: repeat(3, 188px);
+  }
+}
+
+
+@media (max-width: 880px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters {
+    max-width: 612px;
+    width: 100%;
+  }
+
+  .sizesLayout {
+    width: 176px;
+  }
+}
+
+
+
+@media (max-width: 620px) {
+  .filters {
+    max-width: 555px;
+  }
+}
+
+@media (max-width: 560px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+
+
+@media (max-width: 360px) {
+ 
+  .products {
+    gap: 4px;
+  }
+
+}

@@ -42,7 +42,7 @@ const initialState: Product[] = [
     brand: "Nike",
     style: "315115-112/DD8959-100",
     release: "01/16/2021",
-    sizes: ["38.5","38", "39", "40", "41", "42", "43"],
+    sizes: ["38.5", "39", "42", "43"],
     description:
       "The women's Nike Air Force 1 Low White silhouette (W) continues the tradition of the 1982 Air Force 1. The sneaker features an all-white leather upper with a perforated toe box and Swoosh overlays. A Nike heel embroidery and white sole completes the design. The women's Nike Air Force 1 Low White 2018 (W) released in January 2018 and retailed for $90.",
   },
@@ -57,7 +57,7 @@ const initialState: Product[] = [
     brand: "Rick Owens",
     style: "DU01C6800 DQES1 911",
     release: "11/30/2022",
-    sizes: ["38", "40", "41", "42", "43"],
+    sizes: ["36", "36.5", "38", "40", "41", "42", "43"],
   },
   {
     id: "ys1",
@@ -71,7 +71,7 @@ const initialState: Product[] = [
     release: "08/18/2023",
     description:
       "The adidas Yeezy Slide Slate Grey is a collaboration between adidas and Kanye West. The Slide Slate Grey adidas Yeezy comes in a slate grey, slate grey, slate grey color palette. The shoe features an upper constructed from a single piece of molded EVA foam, offering a lightweight and durable design. The slide's design features strategic cutouts and a breathable lining. The slide's outsole features a textured pattern that provides traction and stability. The Yeezy Slide features an effortless slip-on design for easy wear and removal.What we love about the adidas Yeezy Slide Slate Grey is its minimalist and sleek design. The slide is crafted with a one-piece construction, featuring a soft and comfortable foam compound for the upper, while the Slate Grey colorway adds a versatile and understated aesthetic. The adidas Yeezy Slide Slate Grey was released in 2023, and sold for a retail price of $70.",
-    sizes: ["38", "39", "41", "42", "43"],
+    sizes: ["37","37.5", "38", "39", "41", "42", "42.5",],
   },
   {
     id: "v1",
@@ -105,7 +105,7 @@ const initialState: Product[] = [
     release: "02/17/2023",
     description:
       "The adidas Campus 00s Core Black was launched as part of the sports collection sneakers in the adidas brand.The adidas Campus 00s Core Black is covered in core black and white colorways at the upper, footwear white midsole, and brown outsole. This sneaker is a product of suede, rubber, and leather materials that completes the texture. The adidas Campus 00s Core Black features the adidas logo on the tongue and the heel with campus branding at its quarter.The adidas Campus 00s Core Black got released at a suggested retail price of $100 on February 17, 2023.",
-    sizes: ["38", "39", "40", "41", "42", "43"],
+    sizes: ["36", "36.5", "37", "38", "39", "40", "41"],
   },
   {
     id: "jr1",
@@ -120,7 +120,7 @@ const initialState: Product[] = [
     isRecommended: true,
     description:
       "Old meets the new with the Jordan 1 Retro High OG 'Royal Reimagined'. This sneaker reignites the iconic Jordan 1 colorway with a fresh material makeover, showcasing a premium Royal Blue and Black suede. The nostalgic Black/Royal Blue/White colorway carries the torch of the Jordan legacy, making a bold statement of evolution without losing an ounce of its original charisma. The genius lies in the details. The full suede treatment of the OG colorway, coupled with sleek suede Swoosh overlays, dances along the fine line between reverence for the past and the audacity of the present​. The Wings logos on the padded ankle collars and Nike Air tags on the tongues are a nod to its illustrious lineage, while the cushioned ankle collar promises a comfy stride into the future.The Jordan 1 Retro High OG 'Royal Reimagined' is a step into a narrative crafted meticulously by Jordan Brand. Available on November 4, 2023, at a retail price of $180, it's a statement of how the legendary can be reimagined without losing its essence​​. Grab a pair, and be a part of a legacy that's as fearless and unyielding as the Jordan Brand.",
-    sizes: ["38", "39", "40", "41", "42", "43"],
+    sizes: ["38","39", "42", "43", "41.5" , "42.5"],
   },
   {
     id: "n1",
@@ -168,6 +168,7 @@ const initialState: Product[] = [
     img: "Polo.avif",
     isTrending: true,
     brand: "Polo Ralph Lauren",
+    sizes: [ "S", "M", "L", "XL", "XXL"],
   },
   {
     id: "f2",
@@ -197,7 +198,7 @@ const initialState: Product[] = [
     brand: "Nike",
     style: "DD1391-103",
     release: "09/21/2021",
-    sizes: ["38", "39", "40", "41", "42", "43"],
+    sizes: ["38", "39.5", "40", "40.5", "41", "42", "43"],
     description:
       "The Nike Dunk Low Grey Fog features a white leather upper with Grey Fog leather overlays and Swooshes. From there, a matching woven tongue label, heel tab, and sole completes the design.The Nike Dunk Low Grey Fog released in September of 2021 and retailed for $100.",
   },
@@ -230,6 +231,7 @@ const initialState: Product[] = [
     season: "FW22",
     isRecommended: true,
     brand: "Essentials",
+    sizes: ["XXS", "XS", "M", "L", "XXL"],
     description: `The Fear of God Essentials Hoodie FW22 Light Oatmeal is a collaboratively designed hoodie that was included in the brand's fall collection.
 
     The Fear of God Essential Hoodie is a long-sleeved garment made of cotton fabric. Other details include a crew neckline, two kangaroo pockets on the front, and a stretched over-size fit. Rounding out the design is the Essential signature applique logo on top of the Fear Of God branding embroidered on the hest.
@@ -247,6 +249,7 @@ const initialState: Product[] = [
     style: "CU4489-010",
     isFeatured: true,
     brand: "Nike",
+    sizes: ["XXS", "XS", "S", "M"],
     description: `This Nike Tech Fleece Full Zip Hoodie in black delivers a clean look and extra warmth. Featuring a double-sided spacer fabric, this hoodie is built to provide warmth without the weight. The hoodie features a small black Nike logo on its chest and an extra zippable pocket on the left arm.
 
     The black Nike Tech Fleece Full Zip Hoodie was originally made available at the retail price of $130.`,
@@ -261,6 +264,7 @@ const initialState: Product[] = [
     release: "08/25/2022",
     img: "Supreme.avif",
     style: "CU4489-010",
+    sizes: ["XXS", "XS", "L", "XL", "XXL"],
     isFeatured: true,
     brand: "Supreme",
   },
@@ -274,6 +278,7 @@ const initialState: Product[] = [
     img: "Joggers.avif",
     isFeatured: true,
     brand: "Nike",
+    sizes: ["XXS", "XS", "XL", "XXL"],
     description: `Tech Fleece is Nike’s Dark Grey Heather/Black colorway joggers.
 
     This Nike Tech Fleece jogger is a heavy, breathable 100% cotton fabric. It is all heather grey with a small and outstanding black Nike logo on the left thigh. It features a ribbed waistband with a black elasticated drawstring with loose ends. Two side pockets are available on both sides of the joggers. A more oversized side pocket on the left leg is enclosed with a black zipper. The legs are reinforced with ribbed knit cuffs. Not forgetting, there’s a company label with instructions on handling the jogger on the waist at the back.
@@ -291,6 +296,7 @@ const initialState: Product[] = [
     img: "Gap.avif",
     isFeatured: true,
     brand: "Nike",
+    sizes: ["XS", "S", "M", "L", "XL"],
     description: `The black colorway of the collaborative Yeezy x GAP Hoodie was released alongside five other colorways as a part of the partnership's first-ever hoodie drop.
 
     Featuring a double layer construction, this hoodie is made thick from a 100% cotton material. In traditional Kanye West fashion, the Yeezy x GAP Hoodie was released without warning at a seemingly random time.
@@ -312,6 +318,7 @@ const initialState: Product[] = [
     img: "Barcelona.avif",
     isFeatured: true,
     brand: "Nike",
+    sizes: ["XXS", "XS", "M", "XXL"],
   },
 ];
 
