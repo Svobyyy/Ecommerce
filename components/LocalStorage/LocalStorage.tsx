@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setInitial } from "@/Slices/cartSlice";
+import { ProductCart, setInitial } from "@/Slices/cartSlice";
 import { RootState } from "@/store";
 
 const LocalStorage = () => {
@@ -20,9 +20,15 @@ const LocalStorage = () => {
   }, [cartData]);
 
   useEffect(() => {
-    const cartData = JSON.parse(localStorage.getItem("cartData") || "[]");
-    const quantity = parseInt(localStorage.getItem("quantity") || "0");
-    const totalAmount = parseInt(localStorage.getItem("totalAmount") || "0");
+    const cartData: ProductCart[] = JSON.parse(
+      localStorage.getItem("cartData") || "[]"
+    );
+    const quantity: number = parseInt(localStorage.getItem("quantity") || "0");
+    const totalAmount: number = parseInt(
+      localStorage.getItem("totalAmount") || "0"
+    );
+
+    console.log(cartData);
 
     dispatch(
       setInitial({

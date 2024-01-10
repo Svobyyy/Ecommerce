@@ -319,9 +319,7 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    renderTrending(state) {},
   },
 });
 
-export const productsActions = productsSlice.actions;
 export default productsSlice;

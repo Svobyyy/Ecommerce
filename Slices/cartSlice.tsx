@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Product } from "./productsSlice";
 
 export type ProductCart = {
   id: string;
@@ -16,20 +17,17 @@ type initial = {
   totalAmount: number;
 };
 
-
-
 const initialState: initial = {
   cartData: [],
   quantity: 0,
   totalAmount: 0,
 };
 
-
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addCart(state, action) {
+    addCart(state, action: PayloadAction<ProductCart>) {
       const item = state.cartData.find(
         (items) => items.id === action.payload.id
       );
@@ -38,7 +36,14 @@ const cartSlice = createSlice({
       state.quantity++;
       state.totalAmount += action.payload.price;
     },
-    removeCart(state, action) {
+    removeCart(
+      state,
+      action: PayloadAction<{
+        removeId: string;
+        price: number;
+        quantity: number;
+      }>
+    ) {
       const itemRemove = state.cartData.find(
         (items) => items.id === action.payload.removeId
       );
@@ -49,26 +54,33 @@ const cartSlice = createSlice({
 
       state.cartData = state.cartData.filter((data) => data !== itemRemove);
     },
-    increase(state, action) {
+    increase(state, action: PayloadAction<string>) {
       const item = state.cartData.find((items) => items.id === action.payload);
       item &&
-        (item.quantity++, state.quantity++, state.totalAmount += item?.price);
+        (item.quantity++, state.quantity++, (state.totalAmount += item?.price));
     },
-    decrease(state, action) {
+    decrease(state, action: PayloadAction<string>) {
       const item = state.cartData.find((items) => items.id === action.payload);
 
       item &&
-      (item.quantity--, state.quantity--, state.totalAmount -= item?.price);
+        (item.quantity--, state.quantity--, (state.totalAmount -= item?.price));
     },
 
-    setInitial(state,action) {
-      state.cartData = action.payload.cartData
-      state.quantity = action.payload.quantity
-      state.totalAmount = action.payload.totalAmount
-    }
-    
+    setInitial(
+      state,
+      action: PayloadAction<{
+        cartData: ProductCart[];
+        quantity: number;
+        totalAmount: number;
+      }>
+    ) {
+      state.cartData = action.payload.cartData;
+      state.quantity = action.payload.quantity;
+      state.totalAmount = action.payload.totalAmount;
+    },
   },
 });
 
 export default cartSlice;
-export const { addCart, removeCart, increase, decrease, setInitial } = cartSlice.actions;
+export const { addCart, removeCart, increase, decrease, setInitial } =
+  cartSlice.actions;

@@ -1,18 +1,18 @@
-
 import styles from "./MainProduct.module.css";
 import { addCart } from "@/Slices/cartSlice";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Image from "next/image";
+import { Product } from "@/Slices/productsSlice";
 
-const MainProduct = ({ data }: any) => {
+const MainProduct = ({ data }: { data: Product }) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
 
-  const addToCart = (e: any) => {
+  const addToCart = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
     const { size } = Object.fromEntries(formData);
 
     if (data.sizes !== undefined) {
@@ -74,7 +74,7 @@ const MainProduct = ({ data }: any) => {
         <form onSubmit={addToCart}>
           <ul className={styles.sizes}>
             {data.sizes != undefined &&
-              data.sizes.map((size: any) => {
+              data.sizes.map((size: string) => {
                 return (
                   <li
                     className={styles.size}

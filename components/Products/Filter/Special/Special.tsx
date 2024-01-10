@@ -3,11 +3,12 @@ import styles from "./Special.module.css";
 type props = {
 addRemove:  (name: string, value: string) => void,
 name: string,
-activeSpecial: string[]
+activeSpecial: string
 }
 
 
-const Special = ({ addRemove, name, activeSpecial }: any) => {
+const Special = ({ addRemove, name, activeSpecial }: props) => {
+  console.log(activeSpecial, name)
   return (
     <li
       onClick={() => {

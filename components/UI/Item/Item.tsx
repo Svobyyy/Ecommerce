@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "./Item.module.css";
 import Image from "next/image";
+import { Product } from "@/Slices/productsSlice";
 
-const Item = ({ data }: any) => {
+const Item = ({ data }: { data: Product }) => {
   return (
     <li className={styles.Item}>
       <Link href={`/product/${data.id}`} replace>

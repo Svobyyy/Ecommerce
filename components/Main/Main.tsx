@@ -27,17 +27,15 @@ const Main = () => {
       />
 
       <h5>Recommended For You</h5>
-
-      <Items randomId="trending" filterBy={"isRecommended"}/>
+      <Items randomId="trending" filterBy={"isRecommended"} />
 
       <h5>Trending</h5>
-      <Items randomId="recommended" filterBy={"isTrending"}/>
+      <Items randomId="recommended" filterBy={"isTrending"} />
 
-      <Brands/>
+      <Brands />
 
       <h5>Featured Apparel</h5>
-
-      <Items randomId="featured" filterBy={"isFeatured"}/>
+      <Items randomId="featured" filterBy={"isFeatured"} />
     </main>
   );
 };

@@ -6,10 +6,11 @@ import LinkProduct from "./LinkProduct/LinkProduct";
 import MainProduct from "./MainProduct/MainProduct";
 import DetailsProduct from "./DetailsProduct/DetailsProduct";
 import RelatedProduct from "./RelatedProduct/RelatedProduct"
+import { RootState } from "@/store";
 
 const Product = () => {
   const router = useRouter();
-  const productsData = useSelector((state: any) => state.products);
+  const productsData = useSelector((state: RootState) => state.products);
 
 
   return (

@@ -5,9 +5,10 @@ import styles from "./Cart.module.css";
 import { removeCart, increase, decrease } from "@/Slices/cartSlice";
 import PlusIcon from "../Icons/PlusIcon";
 import MinusIcon from "../Icons/MinusIcon";
-import PriceTagIcon from "../Icons/PriceTagIcon";
+
 import Image from "next/image";
 import { RootState } from "@/store";
+import Summary from "./Summary/Summary";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const Cart = () => {
                     </p>
                   )}
                 </section>
+
                 <section className={styles.buttons}>
                   <div
                     onClick={() => {
@@ -81,30 +83,7 @@ const Cart = () => {
         })}
       </ul>
 
-      <section className={styles.summary}>
-        <h5>
-          Summary<PriceTagIcon></PriceTagIcon>
-        </h5>
-
-        <div>
-          <p>Subtotal</p>
-          <p>${totalAmount}</p>
-        </div>
-        <div>
-          <p>Quantity of Items</p>
-          <p>{quantity}</p>
-        </div>
-        <div>
-          <p>Estimated Delivery & Handling</p>
-          <p>FREE</p>
-        </div>
-
-        <div className={styles.total}>
-          <p>Total</p>
-          <p>${totalAmount}</p>
-        </div>
-        <button>Checkout</button>
-      </section>
+      <Summary quantity={quantity} totalAmount={totalAmount} />
     </main>
   );
 };

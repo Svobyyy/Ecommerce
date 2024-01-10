@@ -7,18 +7,18 @@ import Type from "./Filter/Type/Type";
 import Special from "./Filter/Special/Special";
 import Sizes from "./Filter/Sizes/Sizes";
 import CheckFilter from "./Filter/CheckFilter/CheckFilter";
+import { RootState } from "@/store";
 
 const Products = () => {
   const router = useRouter();
 
-  const productsData = useSelector((state: any) => state.products);
+  const productsData = useSelector((state: RootState) => state.products);
 
   const type = router.query.type as string;
   const price = (router.query.price as string)?.split(",");
   const style = (router.query.style as string)?.split(",");
   const size = (router.query.size as string)?.split(",");
   const special = router.query.special as string;
-
 
   const addMore = (name: string, value: string) => {
     const filterArray = (router.query[`${name}`] as string)?.split(",");
@@ -127,26 +127,18 @@ const Products = () => {
     <main className={styles.main}>
       <div className={styles.filters}>
         <ul>
-          <Type
-            path="/products/sneakers"
-            name="SNEAKERS"
-            activeType={type}
-          ></Type>
-          <Type
-            path="/products/apparel"
-            name="APPAREL"
-            activeType={type}
-          ></Type>
+          <Type path="/products/sneakers" name="SNEAKERS" activeType={type} />
+          <Type path="/products/apparel" name="APPAREL" activeType={type} />
           <Type
             path="/products/accessories"
             name="ACCESSORIES"
             activeType={type}
-          ></Type>
+          />
           <Type
             path="/products/electronics"
             name="ELECTRONICS"
             activeType={type}
-          ></Type>
+          />
         </ul>
 
         <ul>
@@ -154,12 +146,12 @@ const Products = () => {
             addRemove={addRemove}
             name="RECOMMENDED"
             activeSpecial={special}
-          ></Special>
+          />
           <Special
             addRemove={addRemove}
             name="TRENDING"
             activeSpecial={special}
-          ></Special>
+          />
         </ul>
 
         <div>
@@ -170,49 +162,49 @@ const Products = () => {
               addMore={addMore}
               value="0-100"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="100-200"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="200-300"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="300-400"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="400-500"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="500-600"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="600-700"
               filter="price"
-            ></CheckFilter>
+            />
             <CheckFilter
               active={price}
               addMore={addMore}
               value="700-800"
               filter="price"
-            ></CheckFilter>
+            />
           </ul>
         </div>
 
@@ -220,34 +212,34 @@ const Products = () => {
           <div>
             <p>SIZES</p>
             <ul className={styles.sizesLayout}>
-              <Sizes addMore={addMore} sizes={size} size={"35"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"35.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"36"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"36.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"37"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"37.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"38"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"38.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"39"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"39.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"40"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"40.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"41"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"41.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"42"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"42.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"43"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"43.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"44"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"44.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"45"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"45.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"46"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"46.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"47"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"47.5"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"48"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"48.5"}></Sizes>
+              <Sizes addMore={addMore} sizes={size} size={"35"} />
+              <Sizes addMore={addMore} sizes={size} size={"35.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"36"} />
+              <Sizes addMore={addMore} sizes={size} size={"36.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"37"} />
+              <Sizes addMore={addMore} sizes={size} size={"37.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"38"} />
+              <Sizes addMore={addMore} sizes={size} size={"38.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"39"} />
+              <Sizes addMore={addMore} sizes={size} size={"39.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"40"} />
+              <Sizes addMore={addMore} sizes={size} size={"40.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"41"} />
+              <Sizes addMore={addMore} sizes={size} size={"41.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"42"} />
+              <Sizes addMore={addMore} sizes={size} size={"42.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"43"} />
+              <Sizes addMore={addMore} sizes={size} size={"43.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"44"} />
+              <Sizes addMore={addMore} sizes={size} size={"44.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"45"} />
+              <Sizes addMore={addMore} sizes={size} size={"45.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"46"} />
+              <Sizes addMore={addMore} sizes={size} size={"46.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"47"} />
+              <Sizes addMore={addMore} sizes={size} size={"47.5"} />
+              <Sizes addMore={addMore} sizes={size} size={"48"} />
+              <Sizes addMore={addMore} sizes={size} size={"48.5"} />
             </ul>
           </div>
         )}
@@ -256,13 +248,13 @@ const Products = () => {
           <div>
             <p>SIZES</p>
             <ul className={styles.sizesLayout}>
-              <Sizes addMore={addMore} sizes={size} size={"xxs"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"xs"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"s"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"m"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"l"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"xl"}></Sizes>
-              <Sizes addMore={addMore} sizes={size} size={"xxl"}></Sizes>
+              <Sizes addMore={addMore} sizes={size} size={"xxs"} />
+              <Sizes addMore={addMore} sizes={size} size={"xs"} />
+              <Sizes addMore={addMore} sizes={size} size={"s"} />
+              <Sizes addMore={addMore} sizes={size} size={"m"} />
+              <Sizes addMore={addMore} sizes={size} size={"l"} />
+              <Sizes addMore={addMore} sizes={size} size={"xl"} />
+              <Sizes addMore={addMore} sizes={size} size={"xxl"} />
             </ul>
           </div>
         )}
@@ -276,39 +268,39 @@ const Products = () => {
                 addMore={addMore}
                 value="WATCHES"
                 filter="style"
-              ></CheckFilter>
+              />
               <CheckFilter
                 active={style}
                 addMore={addMore}
                 value="WALLET"
                 filter="style"
-              ></CheckFilter>
+              />
               <CheckFilter
                 active={style}
                 addMore={addMore}
                 value="JEWELRY"
                 filter="style"
-              ></CheckFilter>
+              />
               <CheckFilter
                 active={style}
                 addMore={addMore}
                 value="HANDBAG"
                 filter="style"
-              ></CheckFilter>
+              />
               <CheckFilter
                 active={style}
                 addMore={addMore}
                 value="BELT"
                 filter="style"
-              ></CheckFilter>
+              />
             </ul>
           </div>
         )}
       </div>
 
       <ul className={styles.products} key="products">
-        {filter()?.map((data: any) => {
-          return <Item data={data} key={data.id + "products"}></Item>;
+        {filter()?.map((data: Product) => {
+          return <Item data={data} key={data.id + "products"} />;
         })}
       </ul>
     </main>

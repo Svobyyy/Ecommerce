@@ -1,14 +1,12 @@
 import styles from "./Sizes.module.css";
 
-
 type props = {
-  addMore:  (name: string, size: string) => void,
-  size: string,
-  sizes: string[]
-}
+  addMore: (name: string, size: string) => void;
+  size: string;
+  sizes: string[];
+};
 
-const Sizes = ({ addMore, sizes, size }: any) => {
-
+const Sizes = ({ addMore, sizes, size }: props) => {
   return (
     <li className={styles.main}>
       <button

@@ -5,8 +5,3 @@
     gap: var(--gapSize);
     overflow: auto;
 }
-
-.Brands a {
-    width: 220px;
-    height: 220px;
-}
