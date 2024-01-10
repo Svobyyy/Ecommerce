@@ -28,7 +28,7 @@ const Products = () => {
         query: { ...router.query, [`${name}`]: value },
       });
 
-    //delete value
+    //delete a value
 
     const findvalue = filterArray.findIndex((find: string) => find === value);
 

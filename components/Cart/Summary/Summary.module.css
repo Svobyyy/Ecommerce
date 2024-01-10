@@ -47,3 +47,8 @@
     background: #242424d0;
   }
   
+  @media (max-width: 900px) {
+    .summary {
+      max-width: 1000px;
+    }
+  }

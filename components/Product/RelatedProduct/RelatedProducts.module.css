@@ -10,3 +10,13 @@
     align-items: center;
     gap: var(--paddingSize);
 }
+
+
+@media (max-width: 1030px) {
+
+    .related {
+      justify-content: flex-start;
+      overflow-x: auto;
+    }
+    
+    }

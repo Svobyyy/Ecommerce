@@ -61,5 +61,30 @@
 
 .title p {
   max-width: 300px;
+  margin-right: 10px;
 }
 
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main ul  {
+    max-width: 1000px;
+  }
+}
+
+
+@media (max-width: 580px) {
+  .image {
+    width: 175px;
+    height: auto;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .image {
+    width: 130px;
+  }
+}

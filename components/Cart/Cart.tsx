@@ -33,7 +33,8 @@ const Cart = () => {
                 width={250}
                 height={134}
                 quality={100}
-              ></Image>
+                className={styles.image}
+              />
 
               <div className={styles.item}>
                 <section className={styles.item_info}>
