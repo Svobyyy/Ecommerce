@@ -10,6 +10,10 @@
     max-width: var(--maxWidth);
 }
 
+.title {
+    font-weight: 700;
+}
+
 .line {
     border-bottom: 1px solid var(--secondaryText);
 }

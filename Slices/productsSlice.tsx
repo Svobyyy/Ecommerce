@@ -133,7 +133,7 @@ const initialState: Product[] = [
     img: "North.avif",
     brand: "The North Face",
     season: "FW23",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [ "XS", "S", "XXL"],
     description: `This black The North Face 1996 Retro Nuptse Jacket takes the outerwear brand's classic, and potentially most popular design, and constructs it from 100% recycled fabric. Like the traditional Nuptse Jacket, the recycled version features 700 Fill-down, a stowable hood, and a water-repellent finish.
 
     The recycled black The North Face 1996 Retro Nuptse Jacket was released at the retail price of $330.
@@ -168,7 +168,7 @@ const initialState: Product[] = [
     img: "Polo.avif",
     isTrending: true,
     brand: "Polo Ralph Lauren",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: [ "M", "L", "XXL"],
   },
   {
     id: "f2",
@@ -231,7 +231,7 @@ const initialState: Product[] = [
     season: "FW22",
     isRecommended: true,
     brand: "Essentials",
-    sizes: ["XXS", "XS", "M", "L", "XXL"],
+    sizes: ["XXS", "XS",  "L", "XXL"],
     description: `The Fear of God Essentials Hoodie FW22 Light Oatmeal is a collaboratively designed hoodie that was included in the brand's fall collection.
 
     The Fear of God Essential Hoodie is a long-sleeved garment made of cotton fabric. Other details include a crew neckline, two kangaroo pockets on the front, and a stretched over-size fit. Rounding out the design is the Essential signature applique logo on top of the Fear Of God branding embroidered on the hest.
@@ -249,7 +249,7 @@ const initialState: Product[] = [
     style: "CU4489-010",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XXS", "XS", "S", "M"],
+    sizes: ["XXS",  "S", "M"],
     description: `This Nike Tech Fleece Full Zip Hoodie in black delivers a clean look and extra warmth. Featuring a double-sided spacer fabric, this hoodie is built to provide warmth without the weight. The hoodie features a small black Nike logo on its chest and an extra zippable pocket on the left arm.
 
     The black Nike Tech Fleece Full Zip Hoodie was originally made available at the retail price of $130.`,
@@ -264,7 +264,7 @@ const initialState: Product[] = [
     release: "08/25/2022",
     img: "Supreme.avif",
     style: "CU4489-010",
-    sizes: ["XXS", "XS", "L", "XL", "XXL"],
+    sizes: ["XXS", "XS",  "XL", ],
     isFeatured: true,
     brand: "Supreme",
   },
@@ -278,7 +278,7 @@ const initialState: Product[] = [
     img: "Joggers.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XXS", "XS", "XL", "XXL"],
+    sizes: [  "XL", "XXL"],
     description: `Tech Fleece is Nike’s Dark Grey Heather/Black colorway joggers.
 
     This Nike Tech Fleece jogger is a heavy, breathable 100% cotton fabric. It is all heather grey with a small and outstanding black Nike logo on the left thigh. It features a ribbed waistband with a black elasticated drawstring with loose ends. Two side pockets are available on both sides of the joggers. A more oversized side pocket on the left leg is enclosed with a black zipper. The legs are reinforced with ribbed knit cuffs. Not forgetting, there’s a company label with instructions on handling the jogger on the waist at the back.
@@ -296,7 +296,7 @@ const initialState: Product[] = [
     img: "Gap.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M",  "XL"],
     description: `The black colorway of the collaborative Yeezy x GAP Hoodie was released alongside five other colorways as a part of the partnership's first-ever hoodie drop.
 
     Featuring a double layer construction, this hoodie is made thick from a 100% cotton material. In traditional Kanye West fashion, the Yeezy x GAP Hoodie was released without warning at a seemingly random time.
@@ -318,7 +318,7 @@ const initialState: Product[] = [
     img: "Barcelona.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XXS", "XS", "M", "XXL"],
+    sizes: [ "XS", "M", "XXL"],
   },
   {
     id: "j11r",
@@ -408,7 +408,66 @@ const initialState: Product[] = [
     brand: "New Balance",
     style: "M1906RHJ",
     release: "01/11/2024",
-    sizes: ["37", "37.5", "38.5", "41.5", "40.5", "42.5", ],
+    sizes: ["37", "37.5", "38.5", "41.5", "40.5", "42.5"],
+  },
+  {
+    id: "revstu",
+    name: "Stussy x Nike Reversible Varsity Jacket",
+    release: "12/08/2023",
+    type: "Apparel",
+    price: 240,
+    color: "BLACK/SAIL",
+    style: "FJ9153-010",
+    img: "Stussy.avif",
+    brand: "Stussy, Nike",
+    season: "FW23",
+    sizes: [   "M", "L", "XL", ],
+  },
+  {
+    id: "dente",
+    name: "Denim Tears The Cotton Wreath Sweatshirt",
+    release: "01/24/2023",
+    type: "Apparel",
+    price: 315,
+    color: "BLACK",
+    img: "Denim.avif",
+    brand: "Denim Tears",
+    season: "SS23",
+    sizes: ["XXS",  "S",  "L", ],
+    description: `The Denim Tears The Cotton Wreath Sweatshirt Black is part of the Denim Tears clothing line, which was created by Tremaine Emory.
+
+    The Cotton Wreath Sweatshirt Blackade is made from 100% premium cotton material and features a hood and front pocket. The sweatshirt features a ribbed crew neckline, cuff, and hem, which provides a snug fit and extra support and comfort. The sleeves of the sweatshirt are relaxed, allowing a range of motion for the wearer. There is a comfortable fleece lining inside the sweatshirt which provides extra insulation and warmth, making it perfect for colder weather conditions.
+    
+    We think that the notable feature of the Denim Tears The Cotton Wreath Sweatshirt Black is its graphic design of a cotton wreath, which is printed throughout. The geometric graphic is printed with high-quality ink that will not easily fade, crack, or peel off during regular wear and wash. The sweatshirt was released on January 24th, 2023, at a retail price of $210.`,
+  },
+  {
+    id: "supnor",
+    name: "Supreme The North Face 700-Fill Down Parka",
+    release: "10/13/2022",
+    type: "Apparel",
+    price: 568,
+    color: "BLACK DRAGON",
+    img: "SupNorth.avif",
+    brand: "Supreme, The North Face",
+    season: "FW22",
+    sizes: ["XXS", "XS",    "XL", ],
+    description: `The Supreme The North Face 700-Fill Down Parka Black Dragon is made from a water-resistant polyester fabric on the exterior and has a nylon lining throughout.
+
+    This collaborative garment has a 700-Fill tag, pockets at the lower front with side zip and double top opening, set-in pockets that are finished with fabric welts, and full zip closure. The set-in pockets have a zip on the inside pocket and zip on the chest, while the full zip closure has hidden Velcro buttoning.
+    
+    The Supreme The North Face 700-Fill Down Parka Black Dragon first became available on October 13th, 2022, with a recommended retail price set at $598.`,
+  },
+  {
+    id: "spidpnk",
+    name: "Sp5der P*NK V2 Hoodie",
+    release: "11/24/2023",
+    type: "Apparel",
+    price: 443,
+    color: "BLACK",
+    img: "Spider.avif",
+    brand: "Sp5der",
+    season: "FW23",
+    sizes: [  "S",  "L", "XL", ],
   },
 ];
 
