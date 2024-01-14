@@ -539,7 +539,7 @@ Crafted to withstand the rigors of daily wear, this Casio watch flaunts a water 
     name: "Supreme 4D Model Human Skull",
     type: "Accessories",
     price: 501,
-    img: "skull.avif",
+    img: "Skull.avif",
     check: "other",
     brand: "Supreme",
     season: "FW23",
