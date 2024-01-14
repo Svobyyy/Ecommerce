@@ -8,7 +8,7 @@ const LinkProduct = ({ data }: { data: Product }) => {
       <p>
         <Link href="/"> Home </Link>/
         <Link href={`/products/${data.type.toLowerCase()}`}> {data.type} </Link>
-        /<Link href={`/products/brand/${data.brand}`}> {data.brand} </Link>/
+        / {data.brand} /
         <span> {data.name}</span>
       </p>
     </div>

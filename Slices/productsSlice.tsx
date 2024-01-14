@@ -71,7 +71,7 @@ const initialState: Product[] = [
     release: "08/18/2023",
     description:
       "The adidas Yeezy Slide Slate Grey is a collaboration between adidas and Kanye West. The Slide Slate Grey adidas Yeezy comes in a slate grey, slate grey, slate grey color palette. The shoe features an upper constructed from a single piece of molded EVA foam, offering a lightweight and durable design. The slide's design features strategic cutouts and a breathable lining. The slide's outsole features a textured pattern that provides traction and stability. The Yeezy Slide features an effortless slip-on design for easy wear and removal.What we love about the adidas Yeezy Slide Slate Grey is its minimalist and sleek design. The slide is crafted with a one-piece construction, featuring a soft and comfortable foam compound for the upper, while the Slate Grey colorway adds a versatile and understated aesthetic. The adidas Yeezy Slide Slate Grey was released in 2023, and sold for a retail price of $70.",
-    sizes: ["37","37.5", "38", "39", "41", "42", "42.5",],
+    sizes: ["37", "37.5", "38", "39", "41", "42.5"],
   },
   {
     id: "v1",
@@ -120,7 +120,7 @@ const initialState: Product[] = [
     isRecommended: true,
     description:
       "Old meets the new with the Jordan 1 Retro High OG 'Royal Reimagined'. This sneaker reignites the iconic Jordan 1 colorway with a fresh material makeover, showcasing a premium Royal Blue and Black suede. The nostalgic Black/Royal Blue/White colorway carries the torch of the Jordan legacy, making a bold statement of evolution without losing an ounce of its original charisma. The genius lies in the details. The full suede treatment of the OG colorway, coupled with sleek suede Swoosh overlays, dances along the fine line between reverence for the past and the audacity of the present​. The Wings logos on the padded ankle collars and Nike Air tags on the tongues are a nod to its illustrious lineage, while the cushioned ankle collar promises a comfy stride into the future.The Jordan 1 Retro High OG 'Royal Reimagined' is a step into a narrative crafted meticulously by Jordan Brand. Available on November 4, 2023, at a retail price of $180, it's a statement of how the legendary can be reimagined without losing its essence​​. Grab a pair, and be a part of a legacy that's as fearless and unyielding as the Jordan Brand.",
-    sizes: ["38","39", "42", "43", "41.5" , "42.5"],
+    sizes: ["38", "39", "42", "43", "41.5", "42.5"],
   },
   {
     id: "n1",
@@ -168,7 +168,7 @@ const initialState: Product[] = [
     img: "Polo.avif",
     isTrending: true,
     brand: "Polo Ralph Lauren",
-    sizes: [ "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
   },
   {
     id: "f2",
@@ -320,13 +320,102 @@ const initialState: Product[] = [
     brand: "Nike",
     sizes: ["XXS", "XS", "M", "XXL"],
   },
+  {
+    id: "j11r",
+    name: "Jordan 11 Retro",
+    type: "Sneakers",
+    price: 230,
+    color: "BLACK/WHITE/METALLIC GOLD",
+    img: "RetroJordan.avif",
+    brand: "Nike",
+    style: "12/09/2023",
+    release: "01/16/2021",
+    sizes: ["38.5", "39", "42", "43"],
+    description: `Product Description
+    Please note, the shade of the outsole on the Jordan 11 Retro DMP Gratitude (2023) may slightly vary, due to the region in which the product was originally purchased from the manufacturer or retailer.
+    
+    The Jordan 11 Retro DMP Gratitude (2023) is a nod to the illustrious heritage encapsulated in the Jordan brand. This iconic Jordan 11 model resurfaces with a touch of the famous Defining Moments colorway. This edition is a herald of the lauded "DMP" series, bringing back the nostalgia from 2006 when it was initially released with an Air Jordan 6, embodying a timeless treasure for the Jordan lineage​.
+    
+    Delving into the aesthetics, the colorway is nothing short of iconic. The upper boasts a high-cut patent leather. The usual mesh is replaced with leather that not only elevates its look but its texture. The white midsole is balanced meticulously with a translucent rubber outsole, evoking a sleek, clean design that's synonymous with the Jordan brand's premium craftsmanship.
+    
+    The Metallic Gold accents echo the legendary legacy of Jordan, adorning the embossed Jumpman logo on the lateral ankle and the iconic "23" on the heels. These distinctive embellishments reflect a heritage of victory and valor, encapsulated in a sneaker that's not just worn, but celebrated. The Jordan 11 Retro DMP Gratitude (2023) released on December 9, 2023, at a retail price of $230.`,
+  },
+  {
+    id: "alph",
+    name: "Nike Alphafly 3",
+    type: "Sneakers",
+    price: 400,
+    color: "WHITE/BLACK/PHANTOM/TOTAL ORANGE",
+    img: "Alphafly.avif",
+    brand: "Nike",
+    style: "FD8356-100",
+    release: "01/04/2024",
+    sizes: ["38", "39.5", "40", "40.5", "41", "42", "43"],
+  },
+  {
+    id: "yezsn",
+    name: "adidas Yeezy Boost 700",
+    type: "Sneakers",
+    price: 450,
+    color: "SOLID GREY/CHALK WHITE/CORE BLACK",
+    img: "YeezySne.avif",
+    brand: "Adidas",
+    style: "B75571",
+    release: "11/01/2017",
+    sizes: ["36", "36.5", "38", "39.5", "40", "40.5", "41", "42", "43"],
+    description: `The Yeezy 700 Boost Wave Runner is the shoe that led Yeezy's pivot from a sleek, minimal aesthetic to a chunky, 90s inspired one. This was the gateway sneaker between knit runners like the 350 and the grungy skate look of the 550. The Yeezy 700 Wave Runner features a grey mesh and leather upper with black suede overlays and teal mesh underlays. At the base, a thick Boost sole and contrasting hits of orange complete the design.
+
+    The adidas Yeezy Boost 700 Wave Runner originally released in November of 2017, and most recently re-released in March of 2022 for a retail price of $300.`,
+  },
+  {
+    id: "mihy",
+    name: "Maison Mihara Yasuhiro Hank OG Sole Canvas Low",
+    type: "Sneakers",
+    price: 356,
+    color: "BLACK/WHITE",
+    img: "Mahira.avif",
+    brand: "Mihara Yasuhiro",
+    style: "A05FW702",
+    release: "06/01/2022",
+    sizes: ["37", "37.5", "38.5", "41.5", "40.5", "41"],
+    description: `
+    The Mihara Yasuhiro Hank OG Sole Canvas Low Black is a sleek and stylish sneaker for any casual occasion. The shoe features a black canvas upper with white stitching and a white rubber sole. The shoe is made from high-quality materials, ensuring durability and comfort. The canvas upper is breathable, while the rubber sole provides excellent traction and support. The shoe is also lightweight, making it easy to wear for extended periods. The Mihara Yasuhiro Hank OG Sole Canvas Low Black was released on June 1st, 2022, and has a retail price of $220. It is available in a range of sizes, making it accessible to a wide range of customers. Something we love about the Mihara Yasuhiro Hank OG Sole Canvas Low Black is its minimalist design, which makes it versatile and easy to pair with any outfit. Our experts think the best features of the shoe are its high-quality materials, excellent traction, and lightweight construction. Overall, the standout feature of the Mihara Yasuhiro Hank OG Sole Canvas Low Black is its combination of style and functionality, making it a must-have for any sneaker enthusiast.`,
+  },
+  {
+    id: "kobe",
+    name: "Nike Kobe 6 Protro",
+    type: "Sneakers",
+    price: 286,
+    color: "BRIGHT CRIMSON/BLACK/ELECTRIC GREEN",
+    img: "Kobe.avif",
+    brand: "Nike",
+    style: "FV4921-600",
+    release: "12/15/2023",
+    sizes: ["37", "37.5", "38.5", "41.5", "40.5", "41", "42"],
+    description: `Step into the future while honoring a legend with the Nike Kobe 6 Protro Reverse Grinch. This long-awaited sneaker, flips the script on the iconic Grinch colorway. Boasting a Bright Crimson upper that mirrors the intensity of Kobe's game, this shoe is a standout piece in any collection. The snakeskin-textured upper, a nod to the Black Mamba himself, is complemented by black Swooshes and electrifying Electric Green accents.
+
+    The Reverse Grinch doesn't just turn heads with its colorway; it pays homage to Kobe Bryant's enduring legacy. Electric Green laces and Kobe branding on the tongues and heels add to its unique charm. The midsole and heel counter, wrapped in Bright Crimson, maintain the shoe’s bold and cohesive look, ensuring it stands out on the court and in the streets.
+    
+    Set to release on December 16, 2023, for $190, the Nike Kobe 6 Protro Reverse Grinch is more than a sneaker—it's a tribute to a basketball icon. With its vivid colors and sleek design, it's a must-have for sneakerheads and basketball fans alike.`,
+  },
+  {
+    id: "bal19r",
+    name: "New Balance 1906R",
+    type: "Sneakers",
+    price: 490,
+    color: "ORANGE/YELLOW/SILVER",
+    img: "Balance.avif",
+    brand: "New Balance",
+    style: "M1906RHJ",
+    release: "01/11/2024",
+    sizes: ["37", "37.5", "38.5", "41.5", "40.5", "42.5", ],
+  },
 ];
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-  },
+  reducers: {},
 });
 
 export default productsSlice;
