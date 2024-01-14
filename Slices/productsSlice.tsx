@@ -14,11 +14,6 @@ export type Product = {
   style?: string;
   release?: string;
   description?: string;
-  wirelessNetworking?: string;
-  mPN?: string;
-  batteryLife?: string;
-  operatingSystem?: string;
-  ports?: string;
   isFeatured?: boolean;
   material?: string;
   band?: string;
@@ -28,6 +23,8 @@ export type Product = {
   caseSize?: string;
   season?: string;
   dimension?: string;
+  hardware?: string;
+  check?: string;
 };
 
 const initialState: Product[] = [
@@ -82,8 +79,8 @@ const initialState: Product[] = [
     price: 155,
     color: "Silver",
     img: "Viviene.avif",
-    isTrending: true,
     style: "6302008602P116P116",
+    check: "jewelry",
     isRecommended: true,
     brand: "Vivienne Westwood",
     description: `The Vivienne Westwood Necklace Mini Bas Relief Pendant Silver is an accessory from the Vivienne Westwood necklace collection.
@@ -133,30 +130,12 @@ const initialState: Product[] = [
     img: "North.avif",
     brand: "The North Face",
     season: "FW23",
-    sizes: [ "XS", "S", "XXL"],
+    sizes: ["XS", "S", "XXL"],
     description: `This black The North Face 1996 Retro Nuptse Jacket takes the outerwear brand's classic, and potentially most popular design, and constructs it from 100% recycled fabric. Like the traditional Nuptse Jacket, the recycled version features 700 Fill-down, a stowable hood, and a water-repellent finish.
 
     The recycled black The North Face 1996 Retro Nuptse Jacket was released at the retail price of $330.
     
     `,
-  },
-  {
-    id: "a1",
-    name: "Apple Airpods (3rd Gen)",
-    type: "Electronics",
-    price: 140,
-    color: "White",
-    img: "Airpods.avif",
-    isTrending: true,
-    brand: "Apple",
-    wirelessNetworking: "BLUETOOTH 5.0",
-    mPN: "MME73AM/A",
-    batteryLife: "6 HOURS",
-    operatingSystem: "IOS, MACOS, IPADOS, WATCHOS, TVOS",
-    ports: "MIC, MAGSAFE CHARGING CASE, LIGHTNING",
-    description: `Experience cutting edge audio for longer durations of time with the Apple AirPods (3rd Generation) earphones. Apple has refined the AirPods with some new quality of life improvements on the latest model. The Apple AirPods (3rd Generation) features spatial audio with dynamic head tracking, adaptive EQ (based on the music you’re playing), and a plethora of sensors and microphones to enhance the calling experience. The Apple AirPods (3rd Generation) are covered in an acoustic mesh, which will minimize noise when on a call, according to Apple. The Apple AirPods (3rd Generation) are sweat and water resistant (IPX4), and feature improved battery life. According to Apple, the Apple AirPods (3rd Generation) feature 6 hours of listening time with one charge (5 hours with spatial audio enabled), and up to 30 hours of listening time with the MagSafe charging case. If you’re looking to upgrade your audio experience, the Apple AirPods (3rd Generation) are available to buy now on StockX.
-
-    Please refer to the manufacturer directly for product related questions, including functionality. StockX is a marketplace platform connecting buyers and sellers and is not responsible for product specific warranties from the manufacturer.`,
   },
   {
     id: "r1",
@@ -168,24 +147,7 @@ const initialState: Product[] = [
     img: "Polo.avif",
     isTrending: true,
     brand: "Polo Ralph Lauren",
-    sizes: [ "M", "L", "XXL"],
-  },
-  {
-    id: "f2",
-    name: "Finalmouse Starlight-12 Phantom Wireless Mouse Medium",
-    isRecommended: true,
-    type: "Electronics",
-    price: 190,
-    color: "Black",
-    img: "Finalmouse.avif",
-    brand: "Finalmouse",
-    release: "11/08/2021",
-    batteryLife: "160 HOURS",
-    description: `The Finalmouse Starlight-12 Phantom Wireless Mouse (Medium) features a magnesium chassis with an Ultem base. The Ultem lets the wireless signal through, but is not as strong as the magnesium top. At approximately 47 grams, the Finalmouse Starlight-12 Phantom Wireless Mouse (Medium) provides more stability and control, with lighter and snappier clicks than its predecessors. The rechargeable Jaunch Lithium Ion battery lasts about 160 continuous hours, or about 3 weeks of average computer use. Built on a Nordic RF platform and using Godspeed Wireless technology, the Finalmouse Starlight-12 Phantom Wireless Mouse (Medium) offers next-gen performance.
-
-    The Finalmouse Starlight-12 Phantom Wireless Mouse (Medium) was released on November 8, 2021, at a retail price of $189.99.
-    
-    `,
+    sizes: ["M", "L", "XXL"],
   },
   {
     id: "dl1",
@@ -206,6 +168,7 @@ const initialState: Product[] = [
     id: "ob1",
     name: "Swatch x Omega Bioceramic Moonswatch Mission to the Moon",
     type: "Accessories",
+    check: "watches",
     price: 350,
     material: "BIOCERAMIC",
     band: "FABRIC",
@@ -231,7 +194,7 @@ const initialState: Product[] = [
     season: "FW22",
     isRecommended: true,
     brand: "Essentials",
-    sizes: ["XXS", "XS",  "L", "XXL"],
+    sizes: ["XXS", "XS", "L", "XXL"],
     description: `The Fear of God Essentials Hoodie FW22 Light Oatmeal is a collaboratively designed hoodie that was included in the brand's fall collection.
 
     The Fear of God Essential Hoodie is a long-sleeved garment made of cotton fabric. Other details include a crew neckline, two kangaroo pockets on the front, and a stretched over-size fit. Rounding out the design is the Essential signature applique logo on top of the Fear Of God branding embroidered on the hest.
@@ -249,7 +212,7 @@ const initialState: Product[] = [
     style: "CU4489-010",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XXS",  "S", "M"],
+    sizes: ["XXS", "S", "M"],
     description: `This Nike Tech Fleece Full Zip Hoodie in black delivers a clean look and extra warmth. Featuring a double-sided spacer fabric, this hoodie is built to provide warmth without the weight. The hoodie features a small black Nike logo on its chest and an extra zippable pocket on the left arm.
 
     The black Nike Tech Fleece Full Zip Hoodie was originally made available at the retail price of $130.`,
@@ -264,7 +227,7 @@ const initialState: Product[] = [
     release: "08/25/2022",
     img: "Supreme.avif",
     style: "CU4489-010",
-    sizes: ["XXS", "XS",  "XL", ],
+    sizes: ["XXS", "XS", "XL"],
     isFeatured: true,
     brand: "Supreme",
   },
@@ -278,7 +241,7 @@ const initialState: Product[] = [
     img: "Joggers.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: [  "XL", "XXL"],
+    sizes: ["XL", "XXL"],
     description: `Tech Fleece is Nike’s Dark Grey Heather/Black colorway joggers.
 
     This Nike Tech Fleece jogger is a heavy, breathable 100% cotton fabric. It is all heather grey with a small and outstanding black Nike logo on the left thigh. It features a ribbed waistband with a black elasticated drawstring with loose ends. Two side pockets are available on both sides of the joggers. A more oversized side pocket on the left leg is enclosed with a black zipper. The legs are reinforced with ribbed knit cuffs. Not forgetting, there’s a company label with instructions on handling the jogger on the waist at the back.
@@ -296,7 +259,7 @@ const initialState: Product[] = [
     img: "Gap.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: ["XS", "S", "M",  "XL"],
+    sizes: ["XS", "S", "M", "XL"],
     description: `The black colorway of the collaborative Yeezy x GAP Hoodie was released alongside five other colorways as a part of the partnership's first-ever hoodie drop.
 
     Featuring a double layer construction, this hoodie is made thick from a 100% cotton material. In traditional Kanye West fashion, the Yeezy x GAP Hoodie was released without warning at a seemingly random time.
@@ -318,7 +281,7 @@ const initialState: Product[] = [
     img: "Barcelona.avif",
     isFeatured: true,
     brand: "Nike",
-    sizes: [ "XS", "M", "XXL"],
+    sizes: ["XS", "M", "XXL"],
   },
   {
     id: "j11r",
@@ -421,7 +384,7 @@ const initialState: Product[] = [
     img: "Stussy.avif",
     brand: "Stussy, Nike",
     season: "FW23",
-    sizes: [   "M", "L", "XL", ],
+    sizes: ["M", "L", "XL"],
   },
   {
     id: "dente",
@@ -433,7 +396,7 @@ const initialState: Product[] = [
     img: "Denim.avif",
     brand: "Denim Tears",
     season: "SS23",
-    sizes: ["XXS",  "S",  "L", ],
+    sizes: ["XXS", "S", "L"],
     description: `The Denim Tears The Cotton Wreath Sweatshirt Black is part of the Denim Tears clothing line, which was created by Tremaine Emory.
 
     The Cotton Wreath Sweatshirt Blackade is made from 100% premium cotton material and features a hood and front pocket. The sweatshirt features a ribbed crew neckline, cuff, and hem, which provides a snug fit and extra support and comfort. The sleeves of the sweatshirt are relaxed, allowing a range of motion for the wearer. There is a comfortable fleece lining inside the sweatshirt which provides extra insulation and warmth, making it perfect for colder weather conditions.
@@ -450,7 +413,7 @@ const initialState: Product[] = [
     img: "SupNorth.avif",
     brand: "Supreme, The North Face",
     season: "FW22",
-    sizes: ["XXS", "XS",    "XL", ],
+    sizes: ["XXS", "XS", "XL"],
     description: `The Supreme The North Face 700-Fill Down Parka Black Dragon is made from a water-resistant polyester fabric on the exterior and has a nylon lining throughout.
 
     This collaborative garment has a 700-Fill tag, pockets at the lower front with side zip and double top opening, set-in pockets that are finished with fabric welts, and full zip closure. The set-in pockets have a zip on the inside pocket and zip on the chest, while the full zip closure has hidden Velcro buttoning.
@@ -467,7 +430,167 @@ const initialState: Product[] = [
     img: "Spider.avif",
     brand: "Sp5der",
     season: "FW23",
-    sizes: [  "S",  "L", "XL", ],
+    sizes: ["S", "L", "XL"],
+  },
+  {
+    id: "goywa",
+    name: "Goyard Victoire Wallet",
+    type: "Accessories",
+    check: "wallet",
+    price: 600,
+    isRecommended: true,
+    material: "CANVAS/CALFSKIN",
+    img: "GoyardWallet.avif",
+    style: "VICTO8PMLTY01CL01X",
+    dimension: "3.5H 4.3W 8.6D",
+    brand: "Goyard",
+    description: `This Goyard Victoire Wallet Monogram Chevron Black arrives crafted from Vauzelles calfskin with a touch of black and tan Goyardine canvas on the outside.
+
+    The Goyard Victoire Wallet Monogram Chevron Black is made in France and is available in a compact size, measuring 9 x 2 x 11 cm (length x height x width). The wallet features 8 card slots, 2 flat pockets, and a note compartment with bill fold. The inside of the wallet is crafted from smooth colored leather.
+    
+    The Goyard Victoire Wallet Monogram Chevron Black was released as part of the Summer Spring 2021 collection and retailed for $1,020.
+    
+    Please Note: Dust bag and box are not required for this accessory.`,
+  },
+  {
+    id: "burbe",
+    name: "Burberry Reversible Monogram Motif Vintage Check Belt",
+    isTrending: true,
+    type: "Accessories",
+    check: "belt",
+    dimension: "1.4W",
+    price: 450,
+    color: "ARCHIVE BEIGE",
+    hardware: "BRASS-TONE",
+    material: "E-CANVAS",
+    img: "Burbery.avif",
+    style: "80219571 / 80465681",
+    brand: "Burberry",
+    description: `Crafted with an environmentally conscious canvas, this reversible Burberry belt features the luxury brand’s signature vintage check print and monogram plaque buckle.
+
+    Please Note: Dust bag and box are not required for this accessory.`,
+  },
+  {
+    id: "telbg",
+    name: "Telfar Shopping Bag",
+    type: "Accessories",
+    check: "handbag",
+    dimension: "11.25H 15W 5D STRAP 21 ",
+    price: 220,
+    color: "BLACK",
+    hardware: "SILVER-TONE",
+    material: "VEGAN LEATHER",
+    img: "Telfar.avif",
+    style: "5BP078_N88_F0009_V_OOO",
+    brand: "Telfar",
+    description:
+      "Please Note: This item comes with a dust bag, the box is not required.",
+  },
+  {
+    id: "csa",
+    name: "Casio Analog",
+    type: "Accessories",
+    check: "watches",
+    price: 61,
+    band: "STAINLESS STEEL",
+    movement: "QUARTZ",
+    dial: "TIFFANY BLUE",
+    img: "Casio.avif",
+    brand: "Casio",
+    referenceNumber: "MTP1302D-2A2V",
+    caseSize: "39MM",
+    description: `
+    Elevate your personal style with the exquisite Casio Analog MTP-1302D-2A2V timepiece. This classic silver watch boasts an elegant turquoise blue dial that perfectly harmonizes with its luminous hands and markers, offering effortless legibility even in dimly lit environments. Its sleek stainless steel case and band combine sophistication with robustness, creating a timepiece that's as enduring as it is refined.
+
+Driven by a dependable quartz movement, the MTP-1302D-2A2V ensures precise timekeeping, empowering you to stay punctual no matter where your day takes you. The added convenience of a date display at the 3 o'clock position enhances the practicality of this remarkable watch, guaranteeing you'll never overlook a crucial appointment or deadline.
+
+Crafted to withstand the rigors of daily wear, this Casio watch flaunts a water resistance of up to 50 meters, instilling confidence for unexpected encounters with water. Whether you're conquering a workday, gracing a formal affair, or embracing the great outdoors, this timepiece is engineered to be your faithful companion on every journey.
+
+`,
+  },
+  {
+    id: "stflq",
+    name: "Stanley Flowstate Quencher 40oz Tumbler",
+    type: "Accessories",
+    price: 89,
+    img: "Stanley.avif",
+    brand: "Stanley",
+    material: "STAINLESS STEEL",
+    isTrending: true,
+    check: "other",
+    color: "ARCTIC TWIST",
+    release: "01/09/2024",
+  },
+  {
+    id: "stflqsu",
+    name: "Stanley x Starbucks (Target Exclusive) Quencher 40oz Tumbler",
+    type: "Accessories",
+    price: 250,
+    img: "StanleySupreme.avif",
+    check: "other",
+    brand: "Stanley",
+    material: "STAINLESS STEEL",
+    color: "PINK (2024)",
+    release: "01/03/2024",
+    description: `Add a touch of glamour to your hydration routine with the Stanley x Starbucks Quencher 40oz Tumbler in Winter Pink. Exclusively released in-store only at Target Starbucks locations on January 3rd, 2024, with an original retail price of $49.95. This bright, shimmery pink 40 oz tumbler features a matching pink lid and straw.`,
+  },
+  {
+    id: "skull",
+    name: "Supreme 4D Model Human Skull",
+    type: "Accessories",
+    price: 501,
+    img: "skull.avif",
+    check: "other",
+    brand: "Supreme",
+    season: "FW23",
+    color: "NATURAL",
+    release: "11/30/2023",
+  },
+  {
+    id: "hypho",
+    name: "Nike Pro THERMA-FIT Hyperwarm Hood",
+    type: "Accessories",
+    price: 71,
+    img: "Hood.avif",
+    check: "other",
+    brand: "Nike",
+    color: "BLACK/WHITE",
+    style: "NHK63-058",
+    description: `The Nike Pro Hyperwarm Hood Balaclava Black is a warm unisex hydropull hood that lightweight and ideal for cold seasons. 
+
+    The Nike Pro Hyperwarm Hood Balaclava Black comes with a solid pattern and comes with several other features. Its insulation capacity help in heat retention. This hood is stretchy and offers cold protection from the head to the neck. The design lets it lie smoothly on the head and form a comfortable cover by itself or under helmets. The material is made from 88% polyester and 12% spandex. 
+    
+    The Nike Pro Hyperwarm Hood Balaclava Black has been on the market for over a decade since its release in June 2012 at a retail price of $30.`,
+    release: "12/01/2022",
+  },
+  {
+    id: "bskhp",
+    name: "Supreme Spalding Mini Basketball Hoop",
+    type: "Accessories",
+    price: 460,
+    img: "Basket.avif",
+    check: "other",
+    season: "FW23",
+    brand: "Supreme",
+    color: "RED",
+    description: `Dimensions: 28" x 16.5"
+    Mini Spalding Ball: 5"
+    
+    Please note: Minor plastic blemishes are common for this item due to the manufacturer's shipment process.
+    
+    `,
+    release: "11/24/2023",
+  },
+  {
+    id: "balms",
+    name: "Market Mini Smiley Basketball",
+    type: "Accessories",
+    price: 370,
+    img: "Ball.avif",
+    check: "other",
+    season: "FW22",
+    brand: "Market",
+    color: "YELLOW",
   },
 ];
 

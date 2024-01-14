@@ -17,18 +17,19 @@ const Products = () => {
 
   const type = router.query.type as string;
   const price = (router.query.price as string)?.split(",");
-  const style = (router.query.style as string)?.split(",");
+  const check = (router.query.check as string)?.split(",");
   const size = (router.query.size as string)?.split(",");
   const special = router.query.special as string;
 
+  //filter with multiple values
+
   const addMore = (name: string, value: string) => {
+    
     const filterArray = (router.query[`${name}`] as string)?.split(",");
     if (filterArray === undefined)
       return router.push({
         query: { ...router.query, [`${name}`]: value },
       });
-
-    //delete a value
 
     const findvalue = filterArray.findIndex((find: string) => find === value);
 
@@ -63,6 +64,8 @@ const Products = () => {
       },
     });
   };
+
+  //only one filter value
 
   const addRemove = (name: string, value: string) => {
     if (
@@ -121,6 +124,20 @@ const Products = () => {
       }),
       (filtered = dummyArray));
 
+
+      check !== undefined &&
+      (check.forEach((data: string) => {
+        filtered.forEach((product: Product) => {
+          if (
+            product.check?.includes(data) &&
+            !dummyArray.includes(product)
+          ) {
+            return dummyArray.push(product);
+          }
+        });
+      }),
+      (filtered = dummyArray));
+
     return filtered;
   };
 
@@ -133,11 +150,6 @@ const Products = () => {
           <Type
             path="/products/accessories"
             name="ACCESSORIES"
-            activeType={type}
-          />
-          <Type
-            path="/products/electronics"
-            name="ELECTRONICS"
             activeType={type}
           />
         </ul>
@@ -240,34 +252,40 @@ const Products = () => {
             <p>STYLES</p>
             <ul>
               <CheckFilter
-                active={style}
+                active={check}
                 addMore={addMore}
                 value="WATCHES"
-                filter="style"
+                filter="check"
               />
               <CheckFilter
-                active={style}
+                active={check}
                 addMore={addMore}
                 value="WALLET"
-                filter="style"
+                filter="check"
               />
               <CheckFilter
-                active={style}
+                active={check}
                 addMore={addMore}
                 value="JEWELRY"
-                filter="style"
+                filter="check"
               />
               <CheckFilter
-                active={style}
+                active={check}
                 addMore={addMore}
                 value="HANDBAG"
-                filter="style"
+                filter="check"
               />
               <CheckFilter
-                active={style}
+                active={check}
                 addMore={addMore}
                 value="BELT"
-                filter="style"
+                filter="check"
+              />
+              <CheckFilter
+                active={check}
+                addMore={addMore}
+                value="OTHER"
+                filter="check"
               />
             </ul>
           </div>

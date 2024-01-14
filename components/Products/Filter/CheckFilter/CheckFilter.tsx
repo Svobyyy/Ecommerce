@@ -11,7 +11,6 @@ type props = {
 
 const CheckFilter = ({ addMore, filter, value, active }: props) => {
 
-  
 
   return (
     <li className={styles.main} onClick={() => addMore(filter, value.toLowerCase())}>

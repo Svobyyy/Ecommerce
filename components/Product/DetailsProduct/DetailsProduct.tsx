@@ -12,11 +12,6 @@ const DetailsProduct = ({ data }: { data: Product }) => {
           <Detail data={data} exists="color" />
           <Detail data={data} exists="brand" />
           <Detail data={data} exists="release" />
-          <Detail data={data} exists="wirelessNetworking" />
-          <Detail data={data} exists="mPN" />
-          <Detail data={data} exists="batteryLife" />
-          <Detail data={data} exists="operatingSystem" />
-          <Detail data={data} exists="ports" />
           <Detail data={data} exists="material" />
           <Detail data={data} exists="band" />
           <Detail data={data} exists="movement" />
@@ -25,6 +20,7 @@ const DetailsProduct = ({ data }: { data: Product }) => {
           <Detail data={data} exists="caseSize" />
           <Detail data={data} exists="season" />
           <Detail data={data} exists="dimension" />
+          <Detail data={data} exists="hardware" />
         </div>
 
         {data.description && (

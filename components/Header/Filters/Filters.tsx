@@ -14,9 +14,6 @@ const Filters = () => {
         <li>
           <Link href="/products/accessories">Accessories</Link>
         </li>
-        <li>
-          <Link href="/products/electronics">Electronics</Link>
-        </li>
       </ul>
     </div>
   );
