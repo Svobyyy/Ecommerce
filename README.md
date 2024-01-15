@@ -46,7 +46,7 @@ npm run dev
 ### Cart
 
 * Working cart with multiple products, sizes and parameters.
-* Cart data is saved in a LocalStorage
+* Cart data is saved in a LocalStorage.
 
 
 
