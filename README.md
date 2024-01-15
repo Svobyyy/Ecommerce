@@ -1,40 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ShopWithUs
 
-## Getting Started
+E-shop with the ability to add products to a cart and filter by various parameters.
 
-First, run the development server:
+## How to use 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Static Badge](https://img.shields.io/badge/npm-red)
+
+```bash 
+# Install dependencies
+
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# Run the application
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next.js** 
+- **TypeScript** 
+- **Redux-Toolkit** 
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### Filter
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Integration of advanced filtering using query string parameters. [Advantages of query string parameters.](https://youtu.be/ukpgxEemXsk?si=NV8E5XEIOYiFGm4l) ![querystringfiltering](https://github.com/Svobyyy/ShopWithUs/assets/56925305/2ea74750-a20e-4995-9572-699fbb6c31be)
+* Select one filter.
+* Select multiple filter.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Search Engine Optimization (SEO)
 
-## Deploy on Vercel
+* I have achieved a score of 100% in all four Lighthouse categories.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  <img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/9134f2fc-0cb0-4c5b-9fdf-ff0fad4d974b" width="250">
+  <img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/5815206d-0c78-4e1f-bd28-e9a44ec3134e" width="250">
+  <img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/4d495ea6-d92a-44bb-b373-552c4f874fdb" width="250">
+  <img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/bf1f1b93-23c0-4b37-aeb7-e2eecc4c03d1" width="250">
+  <img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/3c882504-ca7a-4501-91a9-bd0fa598f4a2" width="250">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Cart
+
+* Working cart with multiple products, sizes and parameters.
+* Cart data is saved in a LocalStorage
+
+
+
