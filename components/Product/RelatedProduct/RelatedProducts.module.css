@@ -1,22 +1,19 @@
 .title {
-    padding: var(--paddingSize);
-    border-top: 1px solid var(--secondary);
+  padding: var(--paddingSize);
+  border-top: 1px solid var(--secondary);
 }
 
 .related {
-    padding: var(--paddingSize);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--paddingSize);
+  padding: var(--paddingSize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--paddingSize);
 }
 
-
 @media (max-width: 1030px) {
-
-    .related {
-      justify-content: flex-start;
-      overflow-x: auto;
-    }
-    
-    }
+  .related {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}

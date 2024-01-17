@@ -14,8 +14,7 @@ const MainProduct = ({ data }: { data: Product }) => {
 
     const formData = new FormData(e.currentTarget);
 
-    const {size} = Object.fromEntries(formData);
-
+    const { size } = Object.fromEntries(formData);
 
     if (data.sizes !== undefined) {
       if (size === undefined) {

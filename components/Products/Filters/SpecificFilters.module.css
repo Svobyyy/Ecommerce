@@ -1,11 +1,11 @@
 .sizesLayout {
-    grid-template-columns: repeat(4, 1fr);
-    display: grid;
-    gap: var(--gapSize);
-  }
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  gap: var(--gapSize);
+}
 
-  @media (max-width: 750px) {
-    .sizesLayout {
-      width: 176px;
-    }
+@media (max-width: 750px) {
+  .sizesLayout {
+    width: 176px;
   }
+}

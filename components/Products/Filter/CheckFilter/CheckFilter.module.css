@@ -7,21 +7,20 @@
   cursor: pointer;
 }
 
-
 .check {
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--main);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkActive {
-    background-color: var(--main);
+  background-color: var(--main);
 }
 
 .check svg {
-    width: 90%;
-    fill: white;
+  width: 90%;
+  fill: white;
 }

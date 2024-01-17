@@ -1,11 +1,10 @@
 import styles from "./Special.module.css";
 
 type props = {
-addRemove:  (name: string, value: string) => void,
-name: string,
-activeSpecial: string
-}
-
+  addRemove: (name: string, value: string) => void;
+  name: string;
+  activeSpecial: string;
+};
 
 const Special = ({ addRemove, name, activeSpecial }: props) => {
   return (
@@ -13,7 +12,9 @@ const Special = ({ addRemove, name, activeSpecial }: props) => {
       onClick={() => {
         return addRemove("special", name.toLowerCase());
       }}
-      className={`${activeSpecial === name.toLowerCase() ? styles.active : ""} ${styles.main}`}
+      className={`${
+        activeSpecial === name.toLowerCase() ? styles.active : ""
+      } ${styles.main}`}
     >
       {name}
     </li>

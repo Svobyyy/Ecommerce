@@ -6,8 +6,10 @@ const Header = () => {
   return (
     <nav className={styles.line}>
       <header className={styles.header}>
-        <Link href="/" className={styles.title}>ShopWithUs</Link>
-        <Features/>
+        <Link href="/" className={styles.title}>
+          ShopWithUs
+        </Link>
+        <Features />
       </header>
     </nav>
   );

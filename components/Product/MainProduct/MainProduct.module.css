@@ -136,7 +136,6 @@
   }
 }
 
-
 @media (max-width: 800px) {
   .main_product img {
     max-width: 700px;
@@ -156,12 +155,10 @@
   }
 }
 
-
 @media (max-width: 530px) {
   .sizes {
     grid-template-columns: repeat(3, 120px);
   }
-
 }
 
 @media (max-width: 400px) {
@@ -172,7 +169,6 @@
   .size label {
     max-width: 100px;
   }
-
 }
 
 @media (max-width: 350px) {

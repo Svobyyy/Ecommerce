@@ -11,9 +11,6 @@ import LocalStorage from "@/components/LocalStorage/LocalStorage";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
-
-
-
   return (
     <>
       <Head>

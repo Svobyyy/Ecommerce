@@ -16,7 +16,9 @@ const Items = ({
     <>
       <ul className={styles.Items} key={randomId}>
         {productsData
-          .filter((data: Product) => true === data[`${filterBy}` as keyof Product])
+          .filter(
+            (data: Product) => true === data[`${filterBy}` as keyof Product]
+          )
           .map((data: Product) => {
             return <Item data={data} key={data.id + randomId} />;
           })}

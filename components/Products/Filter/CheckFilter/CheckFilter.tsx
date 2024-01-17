@@ -20,7 +20,7 @@ const CheckFilter = ({ addMore, filter, value, active }: props) => {
           active?.includes(value.toLowerCase()) ? styles.checkActive : ""
         } ${styles.check}`}
       >
-        <CheckIcon></CheckIcon>
+        <CheckIcon />
       </div>
       {value}
     </li>

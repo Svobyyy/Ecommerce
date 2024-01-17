@@ -10,7 +10,7 @@ const LocalStorage = () => {
     (state: RootState) => state.cart
   );
 
-  const [local, setLocal] = useState(false);
+  const [local, setLocal] = useState<boolean>(false);
 
   useEffect(() => {
     local &&
@@ -27,7 +27,6 @@ const LocalStorage = () => {
     const totalAmount: number = parseInt(
       localStorage.getItem("totalAmount") || "0"
     );
-
 
     dispatch(
       setInitial({

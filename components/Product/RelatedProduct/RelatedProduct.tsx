@@ -18,8 +18,7 @@ const RelatedProduct = ({
       <ul className={styles.related}>
         {data
           .filter(
-            (data: Product) =>
-              related === data.type && data.id !== productId
+            (data: Product) => related === data.type && data.id !== productId
           )
           .filter((_: Product, index: number) => index < 5)
           .map((data: Product) => {
