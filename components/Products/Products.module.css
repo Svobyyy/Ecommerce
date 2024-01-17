@@ -30,21 +30,11 @@
   user-select: none;
 }
 
-
-.sizesLayout {
-  grid-template-columns: repeat(4, 1fr);
-  display: grid;
-  gap: var(--gapSize);
-}
-
-
-
 @media (max-width: 1100px) {
   .products {
     grid-template-columns: repeat(3, 188px);
   }
 }
-
 
 @media (max-width: 880px) {
   .products {
@@ -63,13 +53,7 @@
     max-width: 612px;
     width: 100%;
   }
-
-  .sizesLayout {
-    width: 176px;
-  }
 }
-
-
 
 @media (max-width: 620px) {
   .filters {
@@ -84,12 +68,8 @@
   }
 }
 
-
-
 @media (max-width: 360px) {
- 
   .products {
     gap: 4px;
   }
-
 }

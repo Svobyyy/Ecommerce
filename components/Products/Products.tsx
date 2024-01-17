@@ -1,14 +1,11 @@
 import { useSelector } from "react-redux";
-import Item from "../UI/Item/Item";
 import styles from "./Products.module.css";
 import { useRouter } from "next/router";
 import { Product } from "@/Slices/productsSlice";
-import Type from "./Filter/Type/Type";
-import Special from "./Filter/Special/Special";
-import Sizes from "./Filter/Sizes/Sizes";
-import CheckFilter from "./Filter/CheckFilter/CheckFilter";
 import { RootState } from "@/store";
 import ProductsItem from "./ProductsItem/ProductsItem";
+import DefaultFilters from "./Filters/defaultFilters";
+import SpecificFilters from "./Filters/SpecificFilters";
 
 const Products = () => {
   const router = useRouter();
@@ -24,7 +21,6 @@ const Products = () => {
   //filter with multiple values
 
   const addMore = (name: string, value: string) => {
-    
     const filterArray = (router.query[`${name}`] as string)?.split(",");
     if (filterArray === undefined)
       return router.push({
@@ -78,6 +74,8 @@ const Products = () => {
     return router.push({ query: { ...router.query } });
   };
 
+  //filter products
+
   const filter = (): Product[] => {
     let filtered: Product[] = productsData.filter(
       (data: Product) => data.type.toLowerCase() === router.query.type
@@ -124,14 +122,10 @@ const Products = () => {
       }),
       (filtered = dummyArray));
 
-
-      check !== undefined &&
+    check !== undefined &&
       (check.forEach((data: string) => {
         filtered.forEach((product: Product) => {
-          if (
-            product.check?.includes(data) &&
-            !dummyArray.includes(product)
-          ) {
+          if (product.check?.includes(data) && !dummyArray.includes(product)) {
             return dummyArray.push(product);
           }
         });
@@ -144,152 +138,19 @@ const Products = () => {
   return (
     <main className={styles.main}>
       <div className={styles.filters}>
-        <ul>
-          <Type path="/products/sneakers" name="SNEAKERS" activeType={type} />
-          <Type path="/products/apparel" name="APPAREL" activeType={type} />
-          <Type
-            path="/products/accessories"
-            name="ACCESSORIES"
-            activeType={type}
-          />
-        </ul>
-
-        <ul>
-          <Special
-            addRemove={addRemove}
-            name="RECOMMENDED"
-            activeSpecial={special}
-          />
-          <Special
-            addRemove={addRemove}
-            name="TRENDING"
-            activeSpecial={special}
-          />
-        </ul>
-
-        <div>
-          <p>PRICES</p>
-          <ul>
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="0-100"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="100-200"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="200-300"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="300-400"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="400-500"
-              filter="price"
-            />
-            <CheckFilter
-              active={price}
-              addMore={addMore}
-              value="500-600"
-              filter="price"
-            />
-          </ul>
-        </div>
-
-        {type === "sneakers" && (
-          <div>
-            <p>SIZES</p>
-            <ul className={styles.sizesLayout}>
-              <Sizes addMore={addMore} sizes={size} size={"36"} />
-              <Sizes addMore={addMore} sizes={size} size={"36.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"37"} />
-              <Sizes addMore={addMore} sizes={size} size={"37.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"38"} />
-              <Sizes addMore={addMore} sizes={size} size={"38.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"39"} />
-              <Sizes addMore={addMore} sizes={size} size={"39.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"40"} />
-              <Sizes addMore={addMore} sizes={size} size={"40.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"41"} />
-              <Sizes addMore={addMore} sizes={size} size={"41.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"42"} />
-              <Sizes addMore={addMore} sizes={size} size={"42.5"} />
-              <Sizes addMore={addMore} sizes={size} size={"43"} />
-            </ul>
-          </div>
-        )}
-
-        {type === "apparel" && (
-          <div>
-            <p>SIZES</p>
-            <ul className={styles.sizesLayout}>
-              <Sizes addMore={addMore} sizes={size} size={"xxs"} />
-              <Sizes addMore={addMore} sizes={size} size={"xs"} />
-              <Sizes addMore={addMore} sizes={size} size={"s"} />
-              <Sizes addMore={addMore} sizes={size} size={"m"} />
-              <Sizes addMore={addMore} sizes={size} size={"l"} />
-              <Sizes addMore={addMore} sizes={size} size={"xl"} />
-              <Sizes addMore={addMore} sizes={size} size={"xxl"} />
-            </ul>
-          </div>
-        )}
-
-        {type === "accessories" && (
-          <div>
-            <p>STYLES</p>
-            <ul>
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="WATCHES"
-                filter="check"
-              />
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="WALLET"
-                filter="check"
-              />
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="JEWELRY"
-                filter="check"
-              />
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="HANDBAG"
-                filter="check"
-              />
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="BELT"
-                filter="check"
-              />
-              <CheckFilter
-                active={check}
-                addMore={addMore}
-                value="OTHER"
-                filter="check"
-              />
-            </ul>
-          </div>
-        )}
+        <DefaultFilters
+          type={type}
+          addRemove={addRemove}
+          price={price}
+          special={special}
+          addMore={addMore}
+        />
+        <SpecificFilters
+          type={type}
+          addMore={addMore}
+          size={size}
+          check={check}
+        />
       </div>
 
       <ul className={styles.products} key="products">

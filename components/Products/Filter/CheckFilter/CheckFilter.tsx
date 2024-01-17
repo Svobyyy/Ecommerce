@@ -10,14 +10,15 @@ type props = {
 };
 
 const CheckFilter = ({ addMore, filter, value, active }: props) => {
-
-
   return (
-    <li className={styles.main} onClick={() => addMore(filter, value.toLowerCase())}>
+    <li
+      className={styles.main}
+      onClick={() => addMore(filter, value.toLowerCase())}
+    >
       <div
-        className={`${active?.includes(value.toLowerCase()) ? styles.checkActive : ""} ${
-          styles.check
-        }`}
+        className={`${
+          active?.includes(value.toLowerCase()) ? styles.checkActive : ""
+        } ${styles.check}`}
       >
         <CheckIcon></CheckIcon>
       </div>
