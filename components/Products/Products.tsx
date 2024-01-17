@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Product } from "@/Slices/productsSlice";
 import { RootState } from "@/store";
 import ProductsItem from "./ProductsItem/ProductsItem";
-import DefaultFilters from "./Filters/defaultFilters";
+import DefaultFilters from "./Filters/DefaultFilters";
 import SpecificFilters from "./Filters/SpecificFilters";
 
 const Products = () => {
