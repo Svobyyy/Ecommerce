@@ -5,3 +5,9 @@
   letter-spacing: -1px;
   color: var(--green);
 }
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 25px;
+  }
+}
