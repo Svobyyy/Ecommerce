@@ -1,37 +1,27 @@
-import { Product } from "@/Slices/productsSlice";
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 import styles from "./Product.module.css";
 import LinkProduct from "./LinkProduct/LinkProduct";
 import MainProduct from "./MainProduct/MainProduct";
 import DetailsProduct from "./DetailsProduct/DetailsProduct";
 import RelatedProduct from "./RelatedProduct/RelatedProduct";
-import { RootState } from "@/store";
+import { Product } from "@/Slices/productsSlice";
 
-const Product = () => {
-  const router = useRouter();
-  const productsData = useSelector((state: RootState) => state.products);
-
+const ProductComp = ({
+  product,
+  related,
+}: {
+  product: Product;
+  related: Product[];
+}) => {
   return (
     <main className={styles.main}>
-      {productsData
-        .filter((data: Product) => data.id === router.query.productid)
-        .map((data: Product) => {
-          return (
-            <div key={data.id + "product"}>
-              <LinkProduct data={data} />
-              <MainProduct data={data} />
-              <RelatedProduct
-                data={productsData}
-                related={data.type}
-                productId={data.id}
-              />
-              <DetailsProduct data={data} />
-            </div>
-          );
-        })}
+      <div>
+        <LinkProduct product={product} />
+        <MainProduct product={product} />
+        <RelatedProduct products={related} />
+        <DetailsProduct product={product} />
+      </div>
     </main>
   );
 };
 
-export default Product;
+export default ProductComp;

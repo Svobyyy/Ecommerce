@@ -2,8 +2,9 @@ import Items from "./Items/Items";
 import styles from "./Main.module.css";
 import Brands from "./Brands/Brands";
 import Image from "next/image";
+import { Product } from "@/Slices/productsSlice";
 
-const Main = () => {
+const Main = ({ specialProducts }: { specialProducts: Product[] }) => {
   return (
     <main className={styles.main}>
       <Image
@@ -27,17 +28,36 @@ const Main = () => {
       />
 
       <h5>Recommended For You</h5>
-      <Items randomId="trending" filterBy={"isRecommended"} />
+      <Items
+        randomId="trending"
+        filterBy={"isRecommended"}
+        productsData={specialProducts}
+      />
 
       <h5>Trending</h5>
-      <Items randomId="recommended" filterBy={"isTrending"} />
+      <Items
+        randomId="recommended"
+        filterBy={"isTrending"}
+        productsData={specialProducts}
+      />
 
       <Brands />
 
       <h5>Featured Apparel</h5>
-      <Items randomId="featured" filterBy={"isFeatured"} />
+      <Items
+        randomId="featured"
+        filterBy={"isFeatured"}
+        productsData={specialProducts}
+      />
     </main>
   );
 };
+
+export async function getStaticProps() {
+  const response = await fetch("http://localhost:3005/");
+  const result: Product[] = await response.json();
+
+  return { props: { specialProduct: result } };
+}
 
 export default Main;

@@ -1,19 +1,18 @@
 .header {
+  background-color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  margin: 20px auto;
-  padding: 0px var(--paddingSize);
+  margin: 0px auto;
+  padding: 20px var(--paddingSize);
   max-width: var(--maxWidth);
 }
 
-.title {
-  font-weight: 700;
-}
 
 .line {
+  background-color: white;
   border-bottom: 1px solid var(--secondaryText);
 }

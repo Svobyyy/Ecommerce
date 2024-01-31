@@ -5,9 +5,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { Product } from "@/Slices/productsSlice";
 
-const MainProduct = ({ data }: { data: Product }) => {
+const MainProduct = ({ product }: { product: Product }) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
+
+  const { sizes, id, name, price, type, img } = product;
 
   const addToCart = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,42 +18,42 @@ const MainProduct = ({ data }: { data: Product }) => {
 
     const { size } = Object.fromEntries(formData);
 
-    if (data.sizes !== undefined) {
+    if (sizes?.length !== 0) {
       if (size === undefined) {
         setSelect(true);
         return;
       }
       return dispatch(
         addCart({
-          id: data.id + size,
-          name: data.name,
-          price: data.price,
-          type: data.type,
+          id: id + size,
+          name,
+          price,
+          type,
           size: size as string,
           quantity: 1,
-          img: data.img,
+          img,
         })
       );
     }
-
-    return dispatch(
-      addCart({
-        id: data.id,
-        name: data.name,
-        price: data.price,
-        type: data.type,
-        quantity: 1,
-        img: data.img,
-      })
-    );
+    if (product !== undefined)
+      return dispatch(
+        addCart({
+          id,
+          name,
+          price,
+          type,
+          quantity: 1,
+          img,
+        })
+      );
   };
 
   return (
     <main className={styles.main_product}>
       <div className={styles.main_img}>
         <Image
-          src={`/images/big/${data.img}`}
-          alt={`big photo of ${data.name}`}
+          src={`/images/big/${img}`}
+          alt={`big photo of ${name}`}
           width={728}
           height={546}
           quality={100}
@@ -61,12 +63,12 @@ const MainProduct = ({ data }: { data: Product }) => {
 
       <div className={styles.main_buy}>
         <div className={styles.product_title}>
-          <h4>{data.name}</h4>
-          <p>{data.type}</p>
-          <p>${data.price}</p>
+          <h4>{name}</h4>
+          <p>{type}</p>
+          <p>${price}</p>
         </div>
 
-        {data.sizes != undefined && (
+        {sizes?.length !== 0 && (
           <span className={`${styles.select} ${select && styles.selectRed}`}>
             Select Size
           </span>
@@ -74,8 +76,8 @@ const MainProduct = ({ data }: { data: Product }) => {
 
         <form onSubmit={addToCart}>
           <ul className={styles.sizes}>
-            {data.sizes != undefined &&
-              data.sizes.map((size: string) => {
+            {sizes != undefined &&
+              sizes.map((size: string) => {
                 return (
                   <li
                     className={styles.size}

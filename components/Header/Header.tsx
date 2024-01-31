@@ -1,14 +1,12 @@
 import styles from "./Header.module.css";
 import Features from "./Features/Features";
-import Link from "next/link";
+import Title from "../UI/Title/Title";
 
 const Header = () => {
   return (
     <nav className={styles.line}>
       <header className={styles.header}>
-        <Link href="/" className={styles.title}>
-          ShopWithUs
-        </Link>
+        <Title />
         <Features />
       </header>
     </nav>

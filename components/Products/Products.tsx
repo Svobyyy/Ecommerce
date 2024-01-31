@@ -1,18 +1,14 @@
-import { useSelector } from "react-redux";
 import styles from "./Products.module.css";
 import { useRouter } from "next/router";
 import { Product } from "@/Slices/productsSlice";
-import { RootState } from "@/store";
 import ProductsItem from "./ProductsItem/ProductsItem";
 import DefaultFilters from "./Filters/DefaultFilters";
 import SpecificFilters from "./Filters/SpecificFilters";
 
-const Products = () => {
+const Products = ({ products }: { products: Product[] }) => {
   const router = useRouter();
-
-  const productsData = useSelector((state: RootState) => state.products);
-
   const type = router.query.type as string;
+
   const price = (router.query.price as string)?.split(",");
   const check = (router.query.check as string)?.split(",");
   const size = (router.query.size as string)?.split(",");
@@ -23,9 +19,13 @@ const Products = () => {
   const addMore = (name: string, value: string) => {
     const filterArray = (router.query[`${name}`] as string)?.split(",");
     if (filterArray === undefined)
-      return router.push({
-        query: { ...router.query, [`${name}`]: value },
-      });
+      return router.push(
+        {
+          query: { ...router.query, [`${name}`]: value },
+        },
+        undefined,
+        { shallow: true }
+      );
 
     const findvalue = filterArray.findIndex((find: string) => find === value);
 
@@ -44,21 +44,29 @@ const Products = () => {
         }
       });
 
-      return router.push({
-        query: {
-          ...router.query,
+      return router.push(
+        {
+          query: {
+            ...router.query,
+          },
         },
-      });
+        undefined,
+        { shallow: true }
+      );
     }
 
     //add a value
 
-    return router.push({
-      query: {
-        ...router.query,
-        [`${name}`]: `${router.query[`${name}`]},${value}`,
+    return router.push(
+      {
+        query: {
+          ...router.query,
+          [`${name}`]: `${router.query[`${name}`]},${value}`,
+        },
       },
-    });
+      undefined,
+      { shallow: true }
+    );
   };
 
   //only one filter value
@@ -68,19 +76,22 @@ const Products = () => {
       router.query[`${name}`] === undefined ||
       router.query[`${name}`] !== value
     ) {
-      return router.push({ query: { ...router.query, [`${name}`]: value } });
+      return router.push(
+        { query: { ...router.query, [`${name}`]: value } },
+        undefined,
+        { shallow: true }
+      );
     }
     delete router.query[`${name}`];
-    return router.push({ query: { ...router.query } });
+    return router.push({ query: { ...router.query } }, undefined, {
+      shallow: true,
+    });
   };
 
   //filter products
 
   const filter = (): Product[] => {
-    let filtered: Product[] = productsData.filter(
-      (data: Product) => data.type.toLowerCase() === router.query.type
-    );
-
+    let filtered = products;
     let dummyArray: Product[] = [];
 
     special !== undefined &&

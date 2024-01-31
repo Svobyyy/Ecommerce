@@ -4,26 +4,17 @@ import styles from "./RelatedProducts.module.css";
 import { Product } from "@/Slices/productsSlice";
 
 const RelatedProduct = ({
-  data,
-  related,
-  productId,
+  products,
 }: {
-  data: Product[];
-  related: string;
-  productId: string;
+  products: Product[];
 }) => {
   return (
     <>
       <h5 className={styles.title}>Related Products</h5>
       <ul className={styles.related}>
-        {data
-          .filter(
-            (data: Product) => related === data.type && data.id !== productId
-          )
-          .filter((_: Product, index: number) => index < 5)
-          .map((data: Product) => {
-            return <Item data={data} key={data.id + "related"}></Item>;
-          })}
+        {products.map((data: Product) => {
+          return <Item data={data} key={data.id + "related"}></Item>;
+        })}
       </ul>
     </>
   );

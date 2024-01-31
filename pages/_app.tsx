@@ -1,18 +1,17 @@
 import type { AppProps } from "next/app";
-import Header from "../components/Header/Header";
 import "../styles/global.css";
-import Filters from "../components/Header/Filters/Filters";
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import store from "@/store";
 import Head from "next/head";
 import LocalStorage from "@/components/LocalStorage/LocalStorage";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <SessionProvider session={pageProps.session}>
       <Head>
         <title>eCommerce</title>
         <meta
@@ -34,11 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <LocalStorage></LocalStorage>
         <main className={inter.className}>
-          <Header></Header>
-          <Filters></Filters>
           <Component {...pageProps} />
         </main>
       </Provider>
-    </>
+    </SessionProvider>
   );
 }

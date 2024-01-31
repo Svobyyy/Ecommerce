@@ -1,17 +1,16 @@
 import styles from "./Items.module.css";
-import { useSelector } from "react-redux";
 import Item from "@/components/UI/Item/Item";
 import { Product } from "@/Slices/productsSlice";
-import { RootState } from "@/store";
 
 const Items = ({
   randomId,
   filterBy,
+  productsData,
 }: {
   randomId: string;
   filterBy: string;
+  productsData: Product[];
 }) => {
-  const productsData = useSelector((state: RootState) => state.products);
   return (
     <>
       <ul className={styles.Items} key={randomId}>

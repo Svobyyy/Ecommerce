@@ -1,3 +1,8 @@
+.features {
+  gap: var(--gapSize);
+  display: flex;
+}
+
 .features a {
   padding: 6px;
   border-radius: 100%;
@@ -7,6 +12,11 @@
   justify-content: center;
   align-items: center;
   flex: 0;
+}
+.features .log {
+  flex: 1;
+  width: auto;
+  height: auto;
 }
 
 .features a:hover {

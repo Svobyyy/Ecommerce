@@ -1,0 +1,7 @@
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--green);
+}
