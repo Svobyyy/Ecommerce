@@ -46,7 +46,7 @@ const Summary = ({
           });
 
           try {
-            const response = await fetch("http://localhost:3000/api/checkout", {
+            const response = await fetch("/api/checkout", {
               method: "POST",
               body: JSON.stringify({ products }),
               headers: {
