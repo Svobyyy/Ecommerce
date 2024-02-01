@@ -52,6 +52,7 @@ const Summary = ({
               },
             });
             const body = await response.json();
+            console.log(body.url)
             window.location = body.url
           } catch (e) {
             console.log(e);
