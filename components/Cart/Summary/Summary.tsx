@@ -46,13 +46,16 @@ const Summary = ({
           });
 
           try {
-            const response = await fetch("/api/checkout", {
-              method: "POST",
-              body: JSON.stringify({ products }),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
+            const response = await fetch(
+              "https://ecommerce-indol-nine-62.vercel.app/api/checkout",
+              {
+                method: "POST",
+                body: JSON.stringify({ products }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
             const body = await response.json();
             userouter.replace(body.url);
           } catch (e) {
