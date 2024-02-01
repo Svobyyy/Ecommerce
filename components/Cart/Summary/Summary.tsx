@@ -1,8 +1,7 @@
 import PriceTagIcon from "@/components/Icons/PriceTagIcon";
 import styles from "./Summary.module.css";
 import { ProductCart } from "@/Slices/cartSlice";
-import { useRouter } from "next/dist/client/router";
-import { loadStripe } from "@stripe/stripe-js";
+
 
 const Summary = ({
   quantity,
@@ -13,7 +12,6 @@ const Summary = ({
   totalAmount: number;
   cartData: ProductCart[];
 }) => {
-  const userouter = useRouter();
 
   return (
     <section className={styles.summary}>
@@ -46,18 +44,15 @@ const Summary = ({
           });
 
           try {
-            const response = await fetch(
-              "https://ecommerce-indol-nine-62.vercel.app/api/checkout",
-              {
-                method: "POST",
-                body: JSON.stringify({ products }),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            );
+            const response = await fetch("/api/checkout", {
+              method: "POST",
+              body: JSON.stringify({ products }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
             const body = await response.json();
-            userouter.replace(body.url);
+            window.location = body.url
           } catch (e) {
             console.log(e);
           }
