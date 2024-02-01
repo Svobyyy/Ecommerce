@@ -2,7 +2,6 @@ import PriceTagIcon from "@/components/Icons/PriceTagIcon";
 import styles from "./Summary.module.css";
 import { ProductCart } from "@/Slices/cartSlice";
 
-
 const Summary = ({
   quantity,
   totalAmount,
@@ -12,7 +11,6 @@ const Summary = ({
   totalAmount: number;
   cartData: ProductCart[];
 }) => {
-
   return (
     <section className={styles.summary}>
       <h5>
@@ -52,8 +50,9 @@ const Summary = ({
               },
             });
             const body = await response.json();
-            console.log(body.url)
-            window.location = body.url
+            if (body !== undefined) {
+              window.location = body.url;
+            }
           } catch (e) {
             console.log(e);
           }
