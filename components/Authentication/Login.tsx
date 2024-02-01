@@ -91,12 +91,14 @@ const Login = () => {
               </>
             )}
             <input type="email" name="email" placeholder="Email" required />
+
             <input
               type="password"
               name="password"
               placeholder="Password"
               required
             />
+          
             <button type="submit">{`${signup ? "Sign Up" : "Log In"}`}</button>
           </form>
 

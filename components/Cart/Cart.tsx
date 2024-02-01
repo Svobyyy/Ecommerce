@@ -21,6 +21,7 @@ const Cart = () => {
     dispatch(removeCart({ removeId, price, quantity }));
   };
 
+
   return (
     <main className={styles.main}>
       <ul>
@@ -84,7 +85,7 @@ const Cart = () => {
         })}
       </ul>
 
-      <Summary quantity={quantity} totalAmount={totalAmount} />
+      <Summary quantity={quantity} totalAmount={totalAmount} cartData={cartData} />
     </main>
   );
 };

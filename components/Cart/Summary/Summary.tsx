@@ -1,13 +1,20 @@
 import PriceTagIcon from "@/components/Icons/PriceTagIcon";
 import styles from "./Summary.module.css";
+import { ProductCart } from "@/Slices/cartSlice";
+import { useRouter } from "next/dist/client/router";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Summary = ({
   quantity,
   totalAmount,
+  cartData,
 }: {
   quantity: number;
   totalAmount: number;
+  cartData: ProductCart[];
 }) => {
+  const userouter = useRouter();
+
   return (
     <section className={styles.summary}>
       <h5>
@@ -31,7 +38,30 @@ const Summary = ({
         <p>Total</p>
         <p>${totalAmount}</p>
       </div>
-      <button>Checkout</button>
+
+      <button
+        onClick={async () => {
+          const products = cartData.map((data) => {
+            return { id: data._id, quantity: data.quantity };
+          });
+
+          try {
+            const response = await fetch("http://localhost:3000/api/checkout", {
+              method: "POST",
+              body: JSON.stringify({ products }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            const body = await response.json();
+            userouter.replace(body.url);
+          } catch (e) {
+            console.log(e);
+          }
+        }}
+      >
+        Checkout
+      </button>
     </section>
   );
 };

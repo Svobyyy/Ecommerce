@@ -9,7 +9,7 @@ const MainProduct = ({ product }: { product: Product }) => {
   const dispatch = useDispatch();
   const [select, setSelect] = useState(false);
 
-  const { sizes, id, name, price, type, img } = product;
+  const { sizes, id, name, price, type, img, _id } = product;
 
   const addToCart = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ const MainProduct = ({ product }: { product: Product }) => {
       return dispatch(
         addCart({
           id: id + size,
+          _id,
           name,
           price,
           type,
@@ -39,6 +40,7 @@ const MainProduct = ({ product }: { product: Product }) => {
       return dispatch(
         addCart({
           id,
+          _id,
           name,
           price,
           type,
