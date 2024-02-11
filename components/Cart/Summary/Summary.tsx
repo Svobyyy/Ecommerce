@@ -38,7 +38,11 @@ const Summary = ({
       <button
         onClick={async () => {
           const products = cartData.map((data) => {
-            return { id: data._id, quantity: data.quantity };
+            return {
+              name: data.name,
+              price: data.price,
+              quantity: data.quantity,
+            };
           });
 
           try {

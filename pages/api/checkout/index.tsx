@@ -1,5 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import { ProductsModel } from "@/models/Products";
 import { NextApiRequest, NextApiResponse } from "next";
+import { connect } from "mongoose";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,9 +14,9 @@ export default async function handler(
           price_data: {
             currency: "usd",
             product_data: {
-              name: data.id,
+              name: data.name,
             },
-            unit_amount: 100000,
+            unit_amount: data.price * 100,
           },
           quantity: data.quantity,
         };
@@ -26,6 +28,7 @@ export default async function handler(
         success_url: `http://localhost:3000/`,
         cancel_url: `http://localhost:3000/`,
       });
+
       res.json({ url: session.url });
     } catch (err: any) {
       res.status(err.statusCode || 500).json(err.message);
