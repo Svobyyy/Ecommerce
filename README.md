@@ -25,7 +25,9 @@ npm run dev
 - **TypeScript** 
 - **Redux-Toolkit**
 - **Next-Auth**
-- **Stripe**  
+- **Stripe**
+- **Mongoose**
+- **MongoDB**
 
 ## Key Features
 
