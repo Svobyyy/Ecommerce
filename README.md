@@ -1,6 +1,6 @@
 # ShopWithUs
 
-E-shop with the ability to add products to a cart and filter by various parameters.
+E-shop with the ability to add products to a cart, filter by various parameters, buying products and singing in/up.
 
 ## How to use 
 
@@ -23,7 +23,9 @@ npm run dev
 
 - **Next.js** 
 - **TypeScript** 
-- **Redux-Toolkit** 
+- **Redux-Toolkit**
+- **Next-Auth**
+- **Stripe**  
 
 ## Key Features
 
@@ -47,6 +49,7 @@ npm run dev
 
 * Working cart with multiple products, sizes and parameters.
 * Cart data is saved in a LocalStorage.
+* Payment through a Stripe.  
 
 
 
