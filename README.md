@@ -51,7 +51,22 @@ npm run dev
 
 * Working cart with multiple products, sizes and parameters.
 * Cart data is saved in a LocalStorage.
-* Payment through a Stripe.  
+* Payment through a Stripe.
+
+### Payment
+
+* Payment through a Stripe.
+
+<img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/c359eeca-5b28-4121-bdce-ca1f2d555836" width="500">
+
+### Sign In/Up
+
+<img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/00f6c1b3-dec2-4a2b-840f-31293a810884" width="500">
+<img src="https://github.com/Svobyyy/ShopWithUs/assets/56925305/edb72b27-83f1-47f0-b761-64ed932a0713" width="500">
+
+
+
+
 
 
 
