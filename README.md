@@ -1,6 +1,6 @@
 # ShopWithUs
 
-E-shop with the ability to add products to a cart, filter by various parameters, buying products and singing in/up.
+Fullstack eCommerce website with the ability to add products to a cart, filter by various parameters, buying products and singing in/up.
 
 ## How to use 
 
